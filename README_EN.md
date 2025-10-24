@@ -1,6 +1,19 @@
 # (Forked from orig)
 for sofle keyboard
 
+To compile - go to Actions > (choose main branch) >  Build ZMK Firmware
+(And wait some 10 minutes till icon turns green)
+
+
+
+
+
+
+
+
+
+
+
 
 # Sofle
 
