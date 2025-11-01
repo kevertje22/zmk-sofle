@@ -11,15 +11,16 @@ I might want to use miryoku's fork to build a ready made layout. and then copy i
 hardware such as the joystick)
 
 
-
-
-
-
 To compile - go to Actions > (choose main branch) >  Build ZMK Firmware
 (And wait some 10 minutes till icon turns green)
 
 
+Notes for getting miryoku to be generated into a zmk .keymap file:
 
+vi miryoku/custom_config.h
+pipx install pcpp
+cd config/
+pcpp --passthu-unfound-includes sofle.keymap  > out.keymap
 
 
 
