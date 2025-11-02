@@ -427,7 +427,7 @@ layers:
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-up-bold$$
-  - RGHT
+  - $$mdi:arrow-right-bold$$
   - '&u_caps_word'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -502,10 +502,10 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - WH L
-  - WH D
-  - WH U
-  - WH R
+  - U WH L
+  - U WH D
+  - U WH U
+  - U WH R
   - INS
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:volume-off$$
