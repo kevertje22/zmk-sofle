@@ -57,7 +57,7 @@
 &none       &mt LEFT_GUI A   &mt LEFT_ALT S  &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LEFT_ALT L   &mt LEFT_GUI SEMI &kp APOS
 &none       &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &none
                                                                                                      &kp C_MUTE
-            &none            &none           &kp ESC         &lt 2 SPACE       &kp TAB               &kp ENTER               &lt 4 ENTER     &lt 3 BACKSPACE  &kp DEL     &none            &none
+            &none            &none           &kp ESC         &lt 2 SPACE       &kp TAB               &kp ENTER               &lt 4 ENTER     &lt 3 BACKSPACE  &lt 5 DEL   &none            &none
             >;
             display-name = "BASE_0"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
@@ -122,7 +122,22 @@
             display-name = "SYM_4"; sensor-bindings = <&scroll_encoder>;
         };
 
+// NOTE:  FUN
+//===========
+// Left hand. Function keys
         layer_5 {
+            bindings = <
+&none      &none             &none           &none           &none             &none                  &kp UP_ARROW           &none            &none          &none          &none         &none            &none
+&none      &kp F12           &kp F7          &kp F8          &kp F9            &kp PSCR               &kp DOWN_ARROW         &trans           &trans         &trans         &trans        &trans           &none
+&none      &kp F11           &kp F4          &kp F5          &kp F6            &kp SLCK               &kp LEFT_ARROW         &trans           &trans         &trans         &trans        &trans           &none
+&none      &kp F10           &kp F1          &kp F2          &kp F3            &kp PAUS               &kp RIGHT_ARROW        &trans           &trans         &trans         &trans        &trans           &none
+                                                                                                      &kp C_MUTE      
+            &none            &none           &kp APP         &kp SPACE         &kp TAB                &kp ENTER              &trans           &trans         &trans         &none         &none
+            >;
+            display-name = "FUN_5"; sensor-bindings = <&scroll_encoder>;          };
+
+
+        layer_6 {
             bindings = <
 &kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5                &kp UP_ARROW            &kp F6           &kp F7          &kp F8      &kp F9          &kp F10           &trans
 &trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4              &kp DOWN_ARROW          &kp PG_UP        &kp END         &kp UP      &kp HOME        &kp MINUS         &kp EQUAL
@@ -131,7 +146,7 @@
                                                                                                      &kp C_MUTE      
             &none            &none           &trans          &trans            &trans                &kp ENTER               &trans           &trans          &trans      &none           &none
             >;
-            display-name = "layer5"; sensor-bindings = <&scroll_encoder>;
+            display-name = "BLAH_6"; sensor-bindings = <&scroll_encoder>;
         };
 
     };
