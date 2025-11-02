@@ -57,7 +57,7 @@
 &none       &mt LEFT_GUI A   &mt LEFT_ALT S  &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LEFT_ALT L   &mt LEFT_GUI SEMI &kp APOS
 &none       &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &none
                                                                                                      &kp C_MUTE
-            &none            &none           &kp ESC         &lt 6 SPACE       &kp TAB               &kp ENTER               &lt 4 ENTER     &lt 3 BACKSPACE  &lt 5 DEL   &none            &none
+            &none            &none           &lt 8 ESC       &lt 6 SPACE       &lt 7 TAB             &kp ENTER               &lt 4 ENTER     &lt 3 BACKSPACE  &lt 5 DEL   &none            &none
             >;
             display-name = "BASE_0"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
@@ -87,6 +87,10 @@
             >;
             display-name = "FOO_2"; sensor-bindings = <&scroll_encoder>;
         };
+
+
+
+
 
 
 // NOTE:  NUM
@@ -133,48 +137,58 @@
             >;
             display-name = "FUN_5"; sensor-bindings = <&scroll_encoder>;          };
 
+
+
+
+
+
 // NOTE:  NAV
 //===========
 // Navigation VI style. (see miryoku_babel)
+// Note: CPSWRD means CAPS-WORD. (Nothing to do with password)
+// Note: Not sure those U_xyz items work. maybe then need to be explicitly defined?
         layer_6 {
             bindings = <
 &none      &none              &none           &none           &none            &none                   &mmv MOVE_UP          &none            &none          &none        &none          &none            &none
-&none      &bt BT_CLR         &bt BT_CLR_ALL  &trans          &trans           &trans                  &mmv MOVE_DOWN        &kp U_RDO        &kp U_PST      &kp U_CPY    &kp U_CUT      &kp U_UNDO       &none
-&none      &out OUT_USB       &out OUT_BLE    &trans          &trans           &trans                  &mmv MOVE_LEFT        &kp LEFT         &kp DOWN       &kp UP       &kp RGHT       &kp CPSWRD       &none
-&none      &sys_reset         &trans          &bootloader     &trans           &trans                  &mmv MOVE_RIGHT       &kp HOME         &kp PGDN       &kp PGUP     &kp END        &kp INS          &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_DOWN        &kp U_RDO        &kp U_PST      &kp U_CPY    &kp U_CUT      &kp U_UNDO       &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_LEFT        &kp LEFT         &kp DOWN       &kp UP       &kp RGHT       &kp CPSWRD       &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_RIGHT       &kp HOME         &kp PGDN       &kp PGUP     &kp END        &kp INS          &none
                                                                                                        &kp C_MUTE
-            &none            &none           &trans          &kp N0            &trans                  &kp ENTER             &kp ENTER        &kp BSPC       &kp DEL      &none          &none
+            &none            &none           &trans          &trans            &trans                  &kp ENTER             &kp ENTER        &kp BSPC       &kp DEL      &none          &none
             >;
             display-name = "NAV_6"; sensor-bindings = <&scroll_encoder>;
         };
 
-// NOTE:  FOO
+// NOTE:  MOUSE
 //===========
         layer_7 {
             bindings = <
 &none      &none              &none           &none           &none            &none                   &mmv MOVE_UP          &none            &none          &none        &none          &none            &none
-&none      &bt BT_CLR         &bt BT_CLR_ALL  &trans          &trans           &trans                  &mmv MOVE_DOWN        &kp U_RDO        &kp U_PST      &kp U_CPY    &kp U_CUT      &kp U_UNDO       &none
-&none      &out OUT_USB       &out OUT_BLE    &trans          &trans           &trans                  &mmv MOVE_LEFT        &kp LEFT         &kp DOWN       &kp UP       &kp RGHT       &kp CPSWRD       &none
-&none      &sys_reset         &trans          &bootloader     &trans           &trans                  &mmv MOVE_RIGHT       &kp HOME         &kp PGDN       &kp PGUP     &kp END        &kp INS          &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_DOWN        &kp U_RDO        &kp U_PST      &kp U_CPY    &kp U_CUT      &none            &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_LEFT        &kp MS_L         &kp MS_D       &kp MS_U     &kp MS_R       &none            &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_RIGHT       &kp WH_L         &kp WH_D       &kp WH_U     &kp WH_R       &kp INS          &none
                                                                                                        &kp C_MUTE
-            &none            &none           &trans          &kp N0            &trans                  &kp ENTER             &kp ENTER        &kp BSPC       &kp DEL      &none          &none
+            &none            &none           &trans          &trans            &trans                  &kp ENTER             &kp BTN2         &kp BTN1       &kp BTN3      &none          &none
             >;
-            display-name = "FOO_7"; sensor-bindings = <&scroll_encoder>;
+            display-name = "MOUSE_7"; sensor-bindings = <&scroll_encoder>;
         };
 
-// NOTE:  FOO
+// NOTE:  MEDIA
 //===========
         layer_8 {
             bindings = <
 &none      &none              &none           &none           &none            &none                   &mmv MOVE_UP          &none            &none          &none        &none          &none            &none
-&none      &bt BT_CLR         &bt BT_CLR_ALL  &trans          &trans           &trans                  &mmv MOVE_DOWN        &kp U_RDO        &kp U_PST      &kp U_CPY    &kp U_CUT      &kp U_UNDO       &none
-&none      &out OUT_USB       &out OUT_BLE    &trans          &trans           &trans                  &mmv MOVE_LEFT        &kp LEFT         &kp DOWN       &kp UP       &kp RGHT       &kp CPSWRD       &none
-&none      &sys_reset         &trans          &bootloader     &trans           &trans                  &mmv MOVE_RIGHT       &kp HOME         &kp PGDN       &kp PGUP     &kp END        &kp INS          &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_DOWN        &kp RGB_MOD      &kp RGB_HUI    &kp RGB_SAI  &kp RBG_TOG    &none            &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_LEFT        &kp MPRV         &kp VOLD       &kp VOLU     &kp MNXT       &kp EP_TOG       &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_RIGHT       &kp BT_SEL_0     &kp BT_SEL_1   &kp BT_SEL_2 &kp BT_SEL_3   &kp OUT_TOG      &none
                                                                                                        &kp C_MUTE
-            &none            &none           &trans          &kp N0            &trans                  &kp ENTER             &kp ENTER        &kp BSPC       &kp DEL      &none          &none
+            &none            &none           &trans          &trans            &trans                  &kp ENTER             &kp MSTP         &kp MPLY       &kp MUTE     &none          &none
             >;
-            display-name = "FOO_8"; sensor-bindings = <&scroll_encoder>;
+            display-name = "MEDIA_8"; sensor-bindings = <&scroll_encoder>;
         };
+
+
+
 
         layer_9 {
             bindings = <
