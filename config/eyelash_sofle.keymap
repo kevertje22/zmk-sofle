@@ -42,6 +42,36 @@
         };
     };
 
+    // but just &kp LC(C) is simpler than macro_copy..
+    macros {
+    //    macro_copy: macro_copy {
+    //    compatible = "zmk,behavior-macro";
+    //    #binding-cells = <0>;
+    //    bindings = <&kp LC(C)>;
+    //    };
+    //    macro_paste: macro_paste {
+    //    compatible = "zmk,behavior-macro";
+    //    #binding-cells = <0>;
+    //    bindings = <&kp LC(V)>;
+    //    };
+    //    macro_cut: macro_cut {
+    //    compatible = "zmk,behavior-macro";
+    //    #binding-cells = <0>;
+    //    bindings = <&kp LC(X)>;
+    //    };
+    //    macro_redo: macro_redo {
+    //    compatible = "zmk,behavior-macro";
+    //    #binding-cells = <0>;
+    //    bindings = <&kp LC(Y)>;
+    //    };
+    //    macro_undo: macro_undo {
+    //    compatible = "zmk,behavior-macro";
+    //    #binding-cells = <0>;
+    //    bindings = <&kp LC(Z)>;
+    //    };
+    };
+
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -79,8 +109,8 @@
         layer_2 {
             bindings = <
 &none      &none              &none           &none           &none            &none                   &mmv MOVE_UP          &none            &none          &none        &none          &none            &none
-&none      &bt BT_CLR         &bt BT_CLR_ALL  &trans          &trans           &trans                  &mmv MOVE_DOWN        &kp U_RDO        &kp U_PST      &kp U_CPY    &kp U_CUT      &kp U_UNDO       &none
-&none      &out OUT_USB       &out OUT_BLE    &trans          &trans           &trans                  &mmv MOVE_LEFT        &kp LEFT         &kp DOWN       &kp UP       &kp RIGHT      &kp CPSWRD       &none
+&none      &bt BT_CLR         &bt BT_CLR_ALL  &trans          &trans           &trans                  &mmv MOVE_DOWN        &kp LC(Y)        &kp LC(V)      &kp LC(C)    &kp LC(X)      &kp LC(Z)        &none
+&none      &out OUT_USB       &out OUT_BLE    &trans          &trans           &trans                  &mmv MOVE_LEFT        &kp LEFT         &kp DOWN       &kp UP       &kp RIGHT      &caps_word       &none
 &none      &sys_reset         &trans          &bootloader     &trans           &trans                  &mmv MOVE_RIGHT       &kp HOME         &kp PGDN       &kp PGUP     &kp END        &kp INS          &none
                                                                                                        &kp C_MUTE
             &none            &none           &trans          &kp N0            &trans                  &kp ENTER             &kp ENTER        &kp BSPC       &kp DEL      &none          &none
@@ -133,7 +163,7 @@
 &none      &kp F11           &kp F4          &kp F5          &kp F6            &kp SLCK               &kp LEFT_ARROW         &trans           &trans         &trans         &trans        &trans           &none
 &none      &kp F10           &kp F1          &kp F2          &kp F3            &kp PAUSE_BREAK        &kp RIGHT_ARROW        &trans           &trans         &trans         &trans        &trans           &none
                                                                                                       &kp C_MUTE      
-            &none            &none           &kp APP         &kp SPACE         &kp TAB                &kp ENTER              &trans           &trans         &trans         &none         &none
+            &none            &none           &kp K_APP       &kp SPACE         &kp TAB                &kp ENTER              &trans           &trans         &trans         &none         &none
             >;
             display-name = "FUN_5"; sensor-bindings = <&scroll_encoder>;          };
 
@@ -150,8 +180,8 @@
         layer_6 {
             bindings = <
 &none      &none              &none           &none           &none            &none                   &mmv MOVE_UP          &none            &none          &none        &none          &none            &none
-&none      &none              &none           &none           &none            &none                   &mmv MOVE_DOWN        &kp U_RDO        &kp U_PST      &kp U_CPY    &kp U_CUT      &kp U_UNDO       &none
-&none      &none              &none           &none           &none            &none                   &mmv MOVE_LEFT        &kp LEFT         &kp DOWN       &kp UP       &kp RIGHT      &u_caps_word     &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_DOWN        &kp K_REDO       &kp K_PASTE    &kp K_COPY   &kp K_CUT      &kp K_UNDO       &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_LEFT        &kp LEFT         &kp DOWN       &kp UP       &kp RIGHT      &caps_word       &none
 &none      &none              &none           &none           &none            &none                   &mmv MOVE_RIGHT       &kp HOME         &kp PG_DN      &kp PG_UP    &kp END        &kp INS          &none
                                                                                                        &kp C_MUTE
             &none            &none           &trans          &trans            &trans                  &kp ENTER             &kp ENTER        &kp BSPC       &kp DEL      &none          &none
@@ -163,12 +193,12 @@
 //===========
         layer_7 {
             bindings = <
-&none      &none              &none           &none           &none            &none                   &mmv MOVE_UP          &none            &none          &none        &none          &none            &none
-&none      &none              &none           &none           &none            &none                   &mmv MOVE_DOWN        &kp U_RDO        &kp U_PST      &kp U_CPY    &kp U_CUT      &none            &none
-&none      &none              &none           &none           &none            &none                   &mmv MOVE_LEFT        &kp U_MS_L       &kp U_MS_D     &kp U_MS_U   &kp U_MS_R     &none            &none
-&none      &none              &none           &none           &none            &none                   &mmv MOVE_RIGHT       &kp U_WH_L       &kp U_WH_D     &kp U_WH_U   &kp U_WH_R     &kp INS          &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_UP          &none            &none          &none        &none           &none           &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_DOWN        &kp  K_REDO      &kp  K_PASTE   &kp  K_COPY  &kp  K_CUT      &kp K_UNDO      &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_LEFT        &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none           &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_RIGHT       &msc SCRL_LEFT   &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none           &none
                                                                                                        &kp C_MUTE
-            &none            &none           &trans          &trans            &trans                  &kp ENTER             &kp U_BTN2       &kp U_BTN1     &kp U_BTN3   &none          &none
+            &none            &none           &trans          &trans            &trans                  &kp ENTER             &mkp RCLK        &mkp LCLK      &mkp MCLK     &none           &none
             >;
             display-name = "MOUSE_7"; sensor-bindings = <&scroll_encoder>;
         };
@@ -179,10 +209,11 @@
 // C_PREV: previoussong
 // C_PP: playpause
 // C_STOP: stop
+// Note, there is C_MUTE, but also K_MUTE. and maybe more
         layer_8 {
             bindings = <
-&none      &none              &none           &none           &none            &none                   &mmv MOVE_UP          &none            &none          &none        &none          &none            &none
-&none      &none              &none           &none           &none            &none                   &mmv MOVE_DOWN        &kp U_RGB_MOD    &kp U_RGB_HUI  &kp U_RGB_SAI &kp U_RBG_TOG &none            &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_UP          &none            &none          &none         &none         &none            &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_DOWN        &none            &none          &none         &none         &none            &none
 &none      &none              &none           &none           &none            &none                   &mmv MOVE_LEFT        &kp C_PREV       &kp C_VOL_DN   &kp C_VOL_UP  &kp C_NEXT    &u_ep_tog        &none
 &none      &none              &none           &none           &none            &none                   &mmv MOVE_RIGHT       &kp BT_SEL_0     &kp BT_SEL_1   &kp BT_SEL_2  &kp BT_SEL_3  &u_out_tog       &none
                                                                                                        &kp C_MUTE
