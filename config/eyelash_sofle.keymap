@@ -1,6 +1,7 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
 
+
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
@@ -44,6 +45,8 @@
     keymap {
         compatible = "zmk,keymap";
 
+// NOTE:  BASE
+//============
         layer0 {
             bindings = <
 &kp ESC     &kp N1           &kp N2          &kp N3          &kp N4            &kp N5                &kp UP_ARROW              &kp N6          &kp N7            &kp N8     &kp N9           &kp N0            &kp BACKSPACE
@@ -55,6 +58,8 @@
             display-name = "BASE_0"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
+// NOTE:  EXTRA
+//=============
         layer_1 {
             bindings = <
 &trans      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans          &trans         &trans        &trans           &trans
@@ -66,6 +71,9 @@
             display-name = "EXTRA_1"; sensor-bindings = <&scroll_encoder>;
         };
 
+// NOTE:  NAV
+//===========
+// This is not yet miryoku
         layer_2 {
             bindings = <
 &kp TILDE  &bt BT_SEL 0       &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3     &bt BT_SEL 4            &mmv MOVE_UP            &kp F6            &kp F7           &kp F8       &kp F9         &kp F10          &trans
@@ -77,16 +85,20 @@
             display-name = "NAV_2"; sensor-bindings = <&scroll_encoder>;
         };
 
+
+// NOTE:  NUM
+//===========
+// Left hand. Numpad plus some symbols. (symbols not yet added)
         layer_3 {
             bindings = <
 &trans      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans          &trans         &trans        &trans           &trans
-&trans      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans          &trans         &trans        &trans           &trans
-&trans      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans          &trans         &trans        &trans           &trans
-&trans      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans          &trans         &trans        &trans           &trans
-&trans      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans          &trans         &trans        &trans
+&trans      &trans            &kp N7          &kp N8          &kp N9            &trans                 &trans                 &trans             &trans          &trans         &trans        &trans           &trans
+&trans      &trans            &kp N4          &kp N5          &kp N6            &trans                 &trans                 &trans             &trans          &trans         &trans        &trans           &trans
+&trans      &trans            &kp N1          &kp N2          &kp N3            &trans                 &trans                 &trans             &trans          &trans         &trans        &trans           &trans
+&trans      &trans            &trans          &trans          &kp N0            &trans                 &trans                 &trans             &trans          &trans         &trans        &trans
             >;
-            display-name = "NUM_3"; sensor-bindings = <&scroll_encoder>;
-        };
+            display-name = "NUM_3"; sensor-bindings = <&scroll_encoder>;          };
+
 
         layer_4 {
             bindings = <
