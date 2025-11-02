@@ -6,6 +6,9 @@ Note: This is a fork for this particular Sofle keyboard
 
 * NOTE: I can use git actions to build the firmware, AND to draw the new layout (will be shown below)
 
+* NOTE: draw.yaml workflow seems to not always take the most recent pushed code from the branch I specified.
+
+
 I will probably create branches to try out different layouts.
 specifically, I will try to reproduce a miryoku layout.
 I might want to use miryoku's fork to build a ready made layout. and then copy it here (and update it to reflect the different
