@@ -48,7 +48,8 @@
 
 // NOTE:  BASE
 //============
-// todo: the right pinky still has "' and \|  even though miryoku will 'officially' also have them the symbol or numpad
+// note: the right pinky still has semi/colon AND quotes, even though miryoku has only the quotes.
+// note: the right pinky still has BSLH(and pipe?) on the 6th column even though miryoku has those elsewhere
         layer0 {
             bindings = <
 &none       &none            &none           &none           &none             &none                 &kp UP_ARROW              &none           &none            &none       &none            &none             &none
@@ -69,7 +70,8 @@
 &trans      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans         &trans         &trans        &trans           &trans
 &trans      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans         &trans         &trans        &trans           &trans
 &trans      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans         &trans         &trans        &trans           &trans
-&trans      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans         &trans         &trans        &trans
+                                                                                                       &kp C_MUTE
+            &none            &none           &trans          &trans            &trans                  &none                  &trans             &trans         &trans         &none         &none
             >;
             display-name = "EXTRA_1"; sensor-bindings = <&scroll_encoder>;
         };
@@ -96,11 +98,11 @@
         layer_3 {
             bindings = <
 &none      &none             &none           &none           &none             &none                  &none                  &none              &none          &none          &none         &none            &none
-&none      &LBKT             &kp N7          &kp N8          &kp N9            &RBKT                  &trans                 &trans             &trans         &trans         &trans        &trans           &none
-&none      &trans            &kp N4          &kp N5          &kp N6            &trans                 &trans                 &trans             &trans         &trans         &trans        &trans           &none
-&none      &trans            &kp N1          &kp N2          &kp N3            &trans                 &trans                 &trans             &trans         &trans         &trans        &trans           &none
+&none      &kp LBKT          &kp N7          &kp N8          &kp N9            &kp RBKT               &trans                 &trans             &trans         &trans         &trans        &trans           &none
+&none      &kp SEMI          &kp N4          &kp N5          &kp N6            &kp EQUAL              &trans                 &trans             &trans         &trans         &trans        &trans           &none
+&none      &kp GRAVE         &kp N1          &kp N2          &kp N3            &kp BSLH               &trans                 &trans             &trans         &trans         &trans        &trans           &none
                                                                                                       &kp C_MUTE
-            &none            &none           &trans          &kp N0            &trans                 &none                  &trans             &trans         &trans         &none         &none
+            &none            &none           &kp DOT         &kp N0            &kp MINUS              &none                  &trans             &trans         &trans         &none         &none
             >;
             display-name = "NUM_3"; sensor-bindings = <&scroll_encoder>;          };
 
@@ -111,11 +113,11 @@
         layer_4 {
             bindings = <
 &none      &none             &none           &none           &none             &none                  &none                  &none              &none          &none          &none         &none            &none
-&none      &LBRC             &trans          &trans          &trans            &RBRC                  &trans                 &trans             &trans         &trans         &trans        &trans           &none
-&none      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans         &trans         &trans        &trans           &none
-&none      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans         &trans         &trans        &trans           &none
-                                                                                                     &kp C_MUTE
-            &none            &none           &kp ESC         &lt 2 SPACE       &kp TAB               &none                     &lt 4 ENTER       &lt 3 BACKSPACE  &kp DEL     &none            &none
+&none      &kp LBRC          &kp AMPS        &kp STAR        &none             &kp RBRC               &trans                 &trans             &trans         &trans         &trans        &trans           &none
+&none      &kp COLON         &kp DLR         &kp PRCNT       &kp CARET         &kp PLUS               &trans                 &trans             &trans         &trans         &trans        &trans           &none
+&none      &kp TILDE         &kp EXCL        &kp AT          &kp HASH          &kp PIPE               &trans                 &trans             &trans         &trans         &trans        &trans           &none
+                                                                                                      &kp C_MUTE
+            &none            &none           &kp LPAR        &kp RPAR          &kp UNDERSCORE         &none                  &trans             &trans         &trans         &none         &none
             >;
             display-name = "SYM_4"; sensor-bindings = <&scroll_encoder>;
         };
@@ -126,7 +128,8 @@
 &trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4               &mmv MOVE_DOWN            &kp PG_UP        &kp END         &kp UP      &kp HOME        &kp MINUS         &kp EQUAL
 &trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5               &mmv MOVE_LEFT            &kp PG_DN        &kp LEFT        &kp DOWN    &kp RIGHT       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
 &trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI        &mmv MOVE_RIGHT           &rgb_ug RGB_BRI  &rgb_ug RGB_BRD &kp INSERT  &kp F11         &kp F12           &trans
-&kp C_MUTE  &trans           &trans          &trans           &trans           &trans                 &mkp LCLK                 &trans           &trans          &trans      &trans          &trans
+                                                                                                      &kp C_MUTE
+            &none            &none           &trans          &trans            &trans                 &none                  &trans             &trans         &trans         &none         &none
             >;
             display-name = "layer5"; sensor-bindings = <&scroll_encoder>;
         };
