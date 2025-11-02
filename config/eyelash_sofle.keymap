@@ -210,12 +210,14 @@
 // C_PP: playpause
 // C_STOP: stop
 // Note, there is C_MUTE, but also K_MUTE. and maybe more
+// OUT_USB switches to USB connectivity
+// OUT_BLE switches to BLUETOOTH connectivity
         layer_8 {
             bindings = <
 &none      &none              &none           &none           &none            &none                   &mmv MOVE_UP          &none            &none          &none         &none         &none            &none
 &none      &none              &none           &none           &none            &none                   &mmv MOVE_DOWN        &none            &none          &none         &none         &none            &none
-&none      &none              &none           &none           &none            &none                   &mmv MOVE_LEFT        &kp C_PREV       &kp C_VOL_DN   &kp C_VOL_UP  &kp C_NEXT    &u_ep_tog        &none
-&none      &none              &none           &none           &none            &none                   &mmv MOVE_RIGHT       &kp BT_SEL_0     &kp BT_SEL_1   &kp BT_SEL_2  &kp BT_SEL_3  &u_out_tog       &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_LEFT        &kp C_PREV       &kp C_VOL_DN   &kp C_VOL_UP  &kp C_NEXT    &out OUT_USB     &none
+&none      &none              &none           &none           &none            &none                   &mmv MOVE_RIGHT       &bt BT_SEL 0     &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_BLE     &none
                                                                                                        &kp C_MUTE
             &none            &none           &trans          &trans            &trans                  &kp ENTER             &kp C_STOP       &kp C_PP       &kp C_MUTE   &none          &none
             >;
