@@ -11,21 +11,17 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
-
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
-
 &msc {
     acceleration-exponent = <1>;      // 0
     time-to-max-speed-ms = <100>;       // 300
     delay-ms = <0>;                   // 0
 };
-
 &mmv {
     time-to-max-speed-ms = <500>;
     acceleration-exponent = <1>;
     trigger-period-ms = <16>;
 };
-
 &soft_off { hold-time-ms = <2000>; };
 
 / {
@@ -33,16 +29,12 @@
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
         tap-ms = <100>;
     };
-
     behaviors {
     };
-
     combos {
         compatible = "zmk,combos";
-
         softoff {
             bindings = <&soft_off>;
             key-positions = <14 28 40>;
@@ -59,10 +51,10 @@
 &kp CAPS    &kp A            &kp S           &kp D           &kp F             &kp G                 &kp LEFT_ARROW            &kp H           &kp J             &kp K      &kp L            &kp SEMI          &kp APOS
 &kp LSHFT   &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW           &kp N           &kp M             &kp COMMA  &kp DOT          &kp FSLH          &kp ENTER
 &kp C_MUTE  &kp LCTRL        &kp LEFT_GUI    &kp LEFT_ALT    &mo 1             &kp SPACE             &kp ENTER                 &kp SPACE       &kp ENTER         &mo 2      &kp RIGHT_SHIFT  &kp DELETE      
-            >;                                                                                                                
-            display-name = "layer0"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;                                                             
-        };                                                                                                                    
-                                                                                                                              
+            >;
+            display-name = "layer0"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+        };
+
         layer_1 {
             bindings = <
 &trans      &trans            &trans          &trans          &trans            &trans                 &trans                 &trans             &trans          &trans         &trans        &trans           &trans
@@ -107,8 +99,8 @@
             display-name = "layer4"; sensor-bindings = <&scroll_encoder>;
         };
 
-        layer_5 {                                                                                                             
-            bindings = <                                                                                                      
+        layer_5 {
+            bindings = <
 &kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5                 &mmv MOVE_UP              &kp F6           &kp F7           &kp F8      &kp F9          &kp F10           &trans
 &trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4               &mmv MOVE_DOWN            &kp PG_UP        &kp END          &kp UP      &kp HOME        &kp MINUS         &kp EQUAL
 &trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5               &mmv MOVE_LEFT            &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
@@ -120,3 +112,4 @@
 
     };
 };
+
