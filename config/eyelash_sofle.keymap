@@ -88,24 +88,27 @@
 &none       &mt LEFT_GUI A   &mt LEFT_ALT S  &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LEFT_ALT L   &mt LEFT_GUI SEMI &kp APOS
 &none       &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &none
                                                                                                      &kp C_MUTE
-            &none            &none           &lt 8 ESC       &lt 6 SPACE       &lt 7 TAB             &kp ENTER               &lt 4 ENTER     &lt 3 BACKSPACE  &lt 5 DEL   &none            &none
+            &none            &none           &lt 8 ESC       &lt 6 SPACE       &lt 7 TAB             &kp ENTER               &lt 4 ENTER     &lt 3 BACKSPACE  &lt 5 DEL   &none            &tog 1
             >;
             display-name = "BASE_0"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
 // NOTE:  EXTRA
 //=============
+// colemak dh
+// english letter usage sorted by freq (according to ai): E T A O I N S R H L D C U M F P G W Y B V K X J Q Z
+// and dutch:                                             E N A T I R O D L S G H V K M U P W J B Z C F X Y Q
         layer_1 {
             bindings = <
-&trans      &trans            &trans          &trans          &trans            &trans                 &trans                &trans          &trans         &trans         &trans        &trans           &trans
+&trans      &trans            &trans          &trans          &trans            &trans                 &trans                &trans          &trans         &trans         &trans        &trans              &trans
 
-&trans      &trans            &trans          &trans          &trans            &trans                 &trans                &trans          &trans         &trans         &trans        &trans           &trans
-&trans      &trans            &trans          &trans          &trans            &trans                 &trans                &trans          &trans         &trans         &trans        &trans           &trans
-&trans      &trans            &trans          &trans          &trans            &trans                 &trans                &trans          &trans         &trans         &trans        &trans           &trans
-                                                                                                       &kp C_MUTE
-            &none             &none           &trans          &trans            &trans                 &none                 &trans          &trans         &trans         &none         &none
+&trans       &kp Q            &kp W           &kp F           &kp P             &kp B                 &kp DOWN_ARROW          &kp J           &kp L            &kp U       &kp Y            &kp SEMI          &trans
+&trans       &mt LEFT_GUI A   &mt LEFT_ALT R  &mt LCTRL S     &mt LSHIFT T      &kp G                 &kp LEFT_ARROW          &kp M           &mt LSHIFT N     &mt LCTRL E &mt LEFT_ALT I   &mt LEFT_GUI O    &kp APOS
+&trans       &kp Z            &kp X           &kp C           &kp D             &kp V                 &kp RIGHT_ARROW         &kp K           &kp H            &kp COMMA   &kp DOT          &kp FSLH          &trans
+                                                                                                      &kp C_MUTE
+            &trans             &trans           &trans          &trans            &trans              &trans                 &trans          &trans         &trans         &trans         &trans
             >;
-            display-name = "NOTUSED_1"; sensor-bindings = <&scroll_encoder>;
+            display-name = "COLEMAK_1"; sensor-bindings = <&scroll_encoder>;
         };
 
         layer_2 {
@@ -134,9 +137,9 @@
             bindings = <
 &none      &none             &none           &none           &none             &none                  &kp UP_ARROW           &none            &none          &none          &none         &none            &none
 
-&none      &kp LBKT          &kp N7          &kp N8          &kp N9            &kp RBKT               &kp DOWN_ARROW         &kp SEMI         &kp COLON      &kp BSLH       &kp TILDE        &kp GRAVE        &none
-&none      &kp N0            &kp N1          &kp N2          &kp N3            &kp PLUS               &kp LEFT_ARROW         &trans           &trans         &trans         &trans           &trans           &none
-&none      &kp PIPE          &kp N4          &kp N5          &kp N6            &kp EQUAL              &kp RIGHT_ARROW        &trans           &trans         &kp LESS_THAN  &kp GREATER_THAN &trans           &none
+&trans      &kp LBKT          &kp N7          &kp N8          &kp N9            &kp RBKT               &kp DOWN_ARROW         &kp SEMI         &kp COLON      &kp BSLH       &kp TILDE        &kp GRAVE        &trans
+&trans      &kp N0            &kp N1          &kp N2          &kp N3            &kp PLUS               &kp LEFT_ARROW         &trans           &trans         &trans         &trans           &trans           &trans
+&trans      &kp PIPE          &kp N4          &kp N5          &kp N6            &kp EQUAL              &kp RIGHT_ARROW        &trans           &trans         &kp LESS_THAN  &kp GREATER_THAN &trans           &trans
                                                                                                       &kp C_MUTE      
             &none            &none           &kp DOT         &kp N0            &kp MINUS              &kp ENTER              &trans           &trans         &trans         &none         &none
             >;
@@ -150,9 +153,9 @@
             bindings = <
 &none      &none             &none           &none           &none             &none                   &kp UP_ARROW          &none            &none          &none          &none         &none            &none
 
-&none      &kp LBRC          &kp RBRC        &kp STAR        &kp DOLLAR        &kp PRCNT               &kp DOWN_ARROW        &kp LBRC          &none         &kp STAR        &none             &kp RBRC  &none
-&kp CARET  &kp LBKT          &kp RBKT        &kp LPAR        &kp RPAR          &kp AT                  &kp LEFT_ARROW        &kp COLON         &kp DOLLAR    &kp PRCNT       &none             &none     &none
-&none      &kp EXCL          &kp TILDE       &kp HASH        &kp PIPE          &kp AMPS                &kp RIGHT_ARROW       &kp TILDE         &kp EXCL      &kp AT          &kp HASH          &kp PIPE  &none
+&trans      &kp LBRC          &kp RBRC        &kp STAR        &kp DOLLAR        &kp PRCNT               &kp DOWN_ARROW        &kp LBRC          &none         &kp STAR        &none             &kp RBRC  &trans
+&kp CARET  &kp LBKT          &kp RBKT        &kp LPAR        &kp RPAR          &kp AT                  &kp LEFT_ARROW        &kp COLON         &kp DOLLAR    &kp PRCNT       &none             &none     &trans
+&trans      &kp EXCL          &kp TILDE       &kp HASH        &kp PIPE          &kp AMPS                &kp RIGHT_ARROW       &kp TILDE         &kp EXCL      &kp AT          &kp HASH          &kp PIPE  &trans
                                                                                                        &kp C_MUTE      
             &none            &none           &kp LPAR        &kp RPAR          &kp UNDERSCORE          &kp ENTER             &trans           &trans         &trans         &none         &none
             >;
@@ -166,9 +169,9 @@
             bindings = <
 &none      &none             &none           &none           &none             &none                  &kp UP_ARROW           &none            &none          &none          &none         &none            &none
 
-&none      &kp F12           &kp F7          &kp F8          &kp F9            &kp PSCRN              &kp DOWN_ARROW         &trans           &trans         &trans         &trans        &trans           &none
-&none      &kp F11           &kp F4          &kp F5          &kp F6            &kp SLCK               &kp LEFT_ARROW         &trans           &trans         &trans         &trans        &trans           &none
-&none      &kp F10           &kp F1          &kp F2          &kp F3            &kp PAUSE_BREAK        &kp RIGHT_ARROW        &trans           &trans         &trans         &trans        &trans           &none
+&trans      &kp F12           &kp F7          &kp F8          &kp F9            &kp PSCRN              &kp DOWN_ARROW         &trans           &trans         &trans         &trans        &trans           &trans
+&trans      &kp F11           &kp F4          &kp F5          &kp F6            &kp SLCK               &kp LEFT_ARROW         &trans           &trans         &trans         &trans        &trans           &trans
+&trans      &kp F10           &kp F1          &kp F2          &kp F3            &kp PAUSE_BREAK        &kp RIGHT_ARROW        &trans           &trans         &trans         &trans        &trans           &trans
                                                                                                       &kp C_MUTE      
             &none            &none           &kp K_APP       &kp SPACE         &kp TAB                &kp ENTER              &trans           &trans         &trans         &none         &none
             >;
