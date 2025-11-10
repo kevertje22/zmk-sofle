@@ -2,21 +2,21 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
 
 #define L_BASE     0
+
 #define L_FOO      1
 #define L_COLEMAK  2
-#define L_NUM      3
-#define L_SYM      4
-#define L_FUN      5
-#define L_NAV      6
-#define L_MOUSE    7
-#define L_MEDIA    8
-#define L_SYMNUM   9
-#define L_NAVFOO   10
+#define L_SYMNUM   3
+#define L_NAVFOO   4
+
+#define L_NUM      5
+#define L_SYM      6
+#define L_FUN      7
+#define L_NAV      8
+#define L_MOUSE    9
+#define L_MEDIA    10
 
 // TODO: convert left ctrl and alt to right versions, where appropriate
-// TODO: the home row mods on colemak layer are still for base 0, not for base foo
-// TODO is auto repeat disabled? for all keys on base?
-// TODO maybe i still need the shift available also on the symnum layer. (eg shift minus? or ctrl shift minus?)
+// TODO maybe move the numbers to bottom row?
 
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
@@ -110,7 +110,7 @@
         };
 
 // NOTE:  1 FOO
-//============
+//=================================================================================================================================================================================================================
 //
         layerFoo {
             bindings = <
@@ -126,19 +126,19 @@
         };
 
 // NOTE:  2 COLEMAK
-//=============
+//=================================================================================================================================================================================================================
 // colemak dh
 // english letter usage sorted by freq (according to ai): E T A O I N S R H L D C U M F P G W Y B V K X J Q Z
 // and dutch:                                             E N A T I R O D L S G H V K M U P W J B Z C F X Y Q
         layerColemak {
             bindings = <
-&none       &none            &none           &none           &none             &none                 &trans            &none           &none            &none       &none            &none             &none
+&none       &none            &none           &none           &none             &none                 &trans                  &none           &none            &none       &none            &none             &none
 
 &trans      &kp Q            &kp W           &kp F           &kp P             &kp B                 &kp DOWN_ARROW          &kp J           &kp L            &kp U       &kp Y            &kp SEMI          &trans
-&trans      &mt LEFT_GUI A   &mt LEFT_ALT R  &mt LCTRL S     &mt LSHIFT T      &kp G                 &kp LEFT_ARROW          &kp M           &mt LSHIFT N     &mt LCTRL E &mt LEFT_ALT I   &mt LEFT_GUI O    &kp APOS
+&trans      &kp A            &mt LEFT_ALT R  &mt LCTRL S     &mt LSHIFT T      &kp G                 &kp LEFT_ARROW          &kp M           &mt LSHIFT N     &mt LCTRL E &mt LEFT_ALT I   &kp O             &kp APOS
 &trans      &kp Z            &kp X           &kp C           &kp D             &kp V                 &kp RIGHT_ARROW         &kp K           &kp H            &kp COMMA   &kp DOT          &kp FSLH          &trans
                                                                                                      &kp C_MUTE
-            &trans           &trans          &trans          &trans            &trans                &trans                  &trans          &trans           &trans      &trans           &trans
+            &kp LEFT_GUI           &trans          &trans          &trans            &trans                &trans                  &trans          &trans           &trans      &trans           &trans
             >;
             display-name = "COLEMAK"; sensor-bindings = <&scroll_encoder>;
         };
@@ -157,12 +157,46 @@
         // };
 
 
+// NOTE:  SYMNUM
+//=================================================================================================================================================================================================================
+//
+        layerSymNum {
+            bindings = <
+&none       &none            &none           &none           &none             &none                 &trans            &none           &none            &none       &none            &none             &none
+
+&kp TILDE   &kp EXCL         &kp AT          &kp HASH        &kp DOLLAR        &kp PRCNT             &kp DOWN_ARROW    &kp CARET       &kp AMPS         &kp STAR    &kp LPAR         &kp RPAR          &kp PIPE
+&kp MINUS   &kp N1           &mt LEFT_ALT N2 &mt LCTRL N3    &mt LSHIFT N4     &kp N5                &kp LEFT_ARROW    &kp N6          &mt LSHIFT N7    &mt LCTRL N8 &mt LEFT_ALT N9 &kp N0            &kp PLUS
+&kp UNDERSCORE &kp LBRC      &kp LBKT        &kp RBKT        &kp RBRC          &kp DOT               &kp RIGHT_ARROW   &kp BSLH        &kp EQUAL        &trans      &trans           &trans            &kp GRAVE
+                                                                                                     &kp C_MUTE
+            &none            &none           &kp DOT         &kp SPACE         &kp DOT               &kp ENTER         &trans          &trans           &trans      &none            &none
+            >;
+            display-name = "SYMNUM"; sensor-bindings = <&scroll_encoder>;
+        };
+
+
+
+// NOTE:  NAVFOO
+//=================================================================================================================================================================================================================
+// Navigation with probably also mouse and maybe functions and more
+        layerNavFoo {
+            bindings = <
+&none       &none            &none           &none           &none             &none                 &mmv MOVE_UP      &none           &none            &none       &none            &none             &none
+
+&none      &none             &none           &none           &none            &none                  &mmv MOVE_DOWN    &kp K_REDO      &kp K_PASTE      &kp K_COPY  &kp K_CUT        &kp K_UNDO       &none
+&none      &none             &none           &none           &none            &none                  &mmv MOVE_LEFT    &kp LEFT        &kp DOWN         &kp UP      &kp RIGHT        &caps_word       &none
+&none      &none             &none           &none           &none            &none                  &mmv MOVE_RIGHT   &kp HOME        &kp PG_DN        &kp PG_UP   &kp END          &kp INS          &none
+                                                                                                     &kp C_MUTE                                                                     
+            &none            &none           &trans          &trans            &trans                &kp ENTER         &kp ENTER       &kp BSPC         &kp DEL     &none            &none
+            >;
+            display-name = "NAVFOO"; sensor-bindings = <&scroll_encoder>;
+        };
 
 
 
 
-// NOTE:  3 NUM
-//===========
+
+// NOTE:  NUM
+//=================================================================================================================================================================================================================
 // Left hand. Numpad plus some symbols. (todo complete symbols)
 // TODO: return these: 
         layerNum {
@@ -178,8 +212,8 @@
             display-name = "NUM"; sensor-bindings = <&scroll_encoder>;          };
 
 
-// NOTE:  4 SYM
-//===========
+// NOTE:  SYM
+//=================================================================================================================================================================================================================
 // Left hand
         layerSym {
             bindings = <
@@ -194,8 +228,8 @@
             display-name = "SYM"; sensor-bindings = <&scroll_encoder>;
         };
 
-// NOTE:  5 FUN
-//===========
+// NOTE:  FUN
+//=================================================================================================================================================================================================================
 // Left hand. Function keys
         layerFun {
             bindings = <
@@ -214,8 +248,8 @@
 
 
 
-// NOTE:  6 NAV
-//===========
+// NOTE:  NAV
+//=================================================================================================================================================================================================================
 // Navigation VI style. (see miryoku_babel)
 // Note: CPSWRD means CAPS-WORD. (Nothing to do with password) (actual, babel says it should be &u_caps_word)
 // Note: Not sure those U_xyz items work. maybe then need to be explicitly defined?
@@ -232,8 +266,8 @@
             display-name = "NAV"; sensor-bindings = <&scroll_encoder>;
         };
 
-// NOTE:  7 MOUSE
-//===========
+// NOTE:  MOUSE
+//=================================================================================================================================================================================================================
         layerMouse {
             bindings = <
 &none       &none            &none           &none           &none             &none                 &mmv MOVE_UP            &none           &none            &none       &none            &none             &none
@@ -247,8 +281,8 @@
             display-name = "MOUSE"; sensor-bindings = <&scroll_encoder>;
         };
 
-// NOTE:  8 MEDIA
-//===========
+// NOTE:  MEDIA
+//=================================================================================================================================================================================================================
 // C_NEXT: nextsong
 // C_PREV: previoussong
 // C_PP: playpause
@@ -267,49 +301,6 @@
             &none            &none           &trans          &trans            &trans                  &kp ENTER             &kp C_STOP       &kp C_PP       &kp C_MUTE   &none          &none
             >;
             display-name = "MEDIA"; sensor-bindings = <&scroll_encoder>;
-        };
-
-// NOTE:  9 SYMNUM
-//===========
-//
-        layerSymNum {
-            bindings = <
-&none       &none            &none           &none           &none             &none                 &trans            &none           &none            &none       &none            &none             &none
-
-&kp TILDE   &kp EXCL         &kp AT          &kp HASH        &kp DOLLAR        &kp PRCNT             &kp DOWN_ARROW    &kp CARET       &kp AMPS         &kp STAR    &kp LPAR         &kp RPAR          &kp PIPE
-&kp MINUS   &kp N1           &mt LEFT_ALT N2 &mt LCTRL N3    &mt LSHIFT N4     &kp N5                &kp LEFT_ARROW    &kp N6          &mt LSHIFT N7    &mt LCTRL N8 &mt LEFT_ALT N9 &kp N0            &kp PLUS
-&kp UNDERSCORE &kp LBRC      &kp LBKT        &kp RBKT        &kp RBRC          &kp DOT               &kp RIGHT_ARROW   &kp BSLH        &kp EQUAL        &trans      &trans           &trans            &kp GRAVE
-                                                                                                     &kp C_MUTE
-            &none            &none           &kp DOT         &kp SPACE         &kp DOT               &kp ENTER         &trans          &trans           &trans      &none            &none
-            >;
-            display-name = "SYMNUM"; sensor-bindings = <&scroll_encoder>;
-        };
-
-//  ~-+|   {}[]_=     `\
-//
-//
-
-// &trans      &kp LBRC         &kp RBRC        &kp STAR        &kp DOLLAR        &kp PRCNT             &kp DOWN_ARROW    &kp LBRC        &none            &kp STAR    &none            &kp RBRC  &trans
-// &kp CARET   &kp LBKT         &kp RBKT        &kp LPAR        &kp RPAR          &kp AT                &kp LEFT_ARROW    &kp COLON       &kp DOLLAR       &kp PRCNT   &none            &none     &trans
-// &trans      &kp EXCL         &kp TILDE       &kp HASH        &kp PIPE          &kp AMPS              &kp RIGHT_ARROW   &kp TILDE       &kp EXCL         &kp AT      &kp HASH         &kp PIPE  &trans
-//                                                                                                      &kp C_MUTE      
-//             &none            &none           &kp LPAR        &kp RPAR          &kp UNDERSCORE        &kp ENTER         &trans          &trans           &trans      &none            &none
-
-
-// NOTE:  10 NAVFOO
-//===========
-// Navigation with probably also mouse and maybe functions and more
-        layerNavFoo {
-            bindings = <
-&none       &none            &none           &none           &none             &none                 &mmv MOVE_UP      &none           &none            &none       &none            &none             &none
-
-&none      &none             &none           &none           &none            &none                  &mmv MOVE_DOWN    &kp K_REDO      &kp K_PASTE      &kp K_COPY  &kp K_CUT        &kp K_UNDO       &none
-&none      &none             &none           &none           &none            &none                  &mmv MOVE_LEFT    &kp LEFT        &kp DOWN         &kp UP      &kp RIGHT        &caps_word       &none
-&none      &none             &none           &none           &none            &none                  &mmv MOVE_RIGHT   &kp HOME        &kp PG_DN        &kp PG_UP   &kp END          &kp INS          &none
-                                                                                                     &kp C_MUTE                                                                     
-            &none            &none           &trans          &trans            &trans                &kp ENTER         &kp ENTER       &kp BSPC         &kp DEL     &none            &none
-            >;
-            display-name = "NAVFOO"; sensor-bindings = <&scroll_encoder>;
         };
 
 
