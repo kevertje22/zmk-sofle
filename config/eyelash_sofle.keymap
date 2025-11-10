@@ -1,19 +1,20 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
 
-#define L_BASE     0
+#define L_BASE         0
 
-#define L_FOO      1
-#define L_COLEMAK  2
-#define L_SYMNUM   3
-#define L_NAVFOO   4
+#define L_PLACEHOLDER  1
 
-#define L_NUM      5
-#define L_SYM      6
-#define L_FUN      7
-#define L_NAV      8
-#define L_MOUSE    9
-#define L_MEDIA    10
+#define L_COLEMAK      2
+#define L_SYMNUM       3
+#define L_NAVFOO       4
+
+#define L_NUM          5
+#define L_SYM          6
+#define L_FUN          7
+#define L_NAV          8
+#define L_MOUSE        9
+#define L_MEDIA       10
 
 // TODO: convert left ctrl and alt to right versions, where appropriate
 // TODO maybe move the numbers to bottom row?
@@ -93,6 +94,22 @@
 
 
 // NOTE:  0 BASE
+//=================================================================================================================================================================================================================
+//
+        layerBase {
+            bindings = <
+&none       &none            &none           &none           &none             &none                 &kp UP_ARROW            &none           &none            &none       &none            &none             &none
+
+&kp ESC     &kp Q            &kp W           &kp E           &kp R             &kp T                 &kp DOWN_ARROW          &kp Y           &kp U            &kp I       &kp O            &kp P             &kp DEL
+&caps_word  &kp A            &mt LEFT_ALT S  &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LEFT_ALT L   &kp SEMI          &kp APOS
+&kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
+                                                                                                     &kp C_MUTE
+            &kp LEFT_GUI     &none           &lt L_MEDIA ESC &lt L_SYMNUM SPACE &lt L_NAVFOO TAB     &kp ENTER            &lt L_NAVFOO ENTER &lt L_SYMNUM SPACE &lt L_FUN BACKSPACE    &tog L_PLACEHOLDER &tog L_COLEMAK
+            >;
+            display-name = "FOO"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+        };
+
+// NOTE:  PLACEHOLDER
 //============
 // note: the right pinky still has semi/colon AND quotes, even though miryoku has only the quotes.
 // note: the right pinky still has BSLH(and pipe?) on the 6th column even though miryoku has those elsewhere
@@ -104,25 +121,9 @@
 &caps_word  &mt LEFT_GUI A   &mt LEFT_ALT S  &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LEFT_ALT L   &mt LEFT_GUI SEMI &kp APOS
 &kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
                                                                                                      &kp C_MUTE
-            &none            &none           &lt L_MEDIA ESC &lt L_NAV SPACE   &lt L_MOUSE TAB       &kp ENTER             &lt L_SYM ENTER &lt L_NUM BACKSPACE &lt L_FUN DEL &tog L_FOO    &tog L_COLEMAK
+            &none            &none           &lt L_MEDIA ESC &lt L_NAV SPACE   &lt L_MOUSE TAB       &kp ENTER             &lt L_SYM ENTER &lt L_NUM BACKSPACE &lt L_FUN DEL     &tog L_PLACEHOLDER    &tog L_COLEMAK
             >;
-            display-name = "BASE"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-        };
-
-// NOTE:  1 FOO
-//=================================================================================================================================================================================================================
-//
-        layerFoo {
-            bindings = <
-&none       &none            &none           &none           &none             &none                 &kp UP_ARROW            &none           &none            &none       &none            &none             &none
-
-&kp ESC     &kp Q            &kp W           &kp E           &kp R             &kp T                 &kp DOWN_ARROW          &kp Y           &kp U            &kp I       &kp O            &kp P             &kp DEL
-&caps_word  &kp A            &mt LEFT_ALT S  &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LEFT_ALT L   &kp SEMI          &kp APOS
-&kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
-                                                                                                     &kp C_MUTE
-            &kp LEFT_GUI     &none           &lt L_MEDIA ESC &lt L_SYMNUM SPACE &lt L_NAVFOO TAB     &kp ENTER            &lt L_NAVFOO ENTER &lt L_SYMNUM SPACE &lt L_FUN BACKSPACE &tog L_FOO    &tog L_COLEMAK
-            >;
-            display-name = "FOO"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            display-name = "PLACEHOLDER"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
 // NOTE:  2 COLEMAK
