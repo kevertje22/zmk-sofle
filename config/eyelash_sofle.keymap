@@ -7,12 +7,12 @@
 
 #define L_COLEMAK      2
 #define L_SYMNUM       3
-#define L_NAVFOO       4
+#define L_NAV          4
 
 #define L_NUM          5
 #define L_SYM          6
 #define L_FUN          7
-#define L_NAV          8
+#define L_NAV_OLD      8
 #define L_MOUSE        9
 #define L_MEDIA       10
 
@@ -104,7 +104,7 @@
 &caps_word  &kp A            &mt LEFT_ALT S  &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LEFT_ALT L   &kp SEMI          &kp APOS
 &kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
                                                                                                      &kp C_MUTE
-            &kp LEFT_GUI     &none           &lt L_MEDIA ESC &lt L_SYMNUM SPACE &lt L_NAVFOO TAB     &kp ENTER            &lt L_NAVFOO ENTER &lt L_SYMNUM SPACE &lt L_FUN BACKSPACE    &tog L_PLACEHOLDER &tog L_COLEMAK
+            &kp LEFT_GUI     &none           &lt L_MEDIA ESC &lt L_SYMNUM SPACE &lt L_NAV TAB        &kp ENTER              &lt L_NAV ENTER &lt L_SYMNUM SPACE &lt L_FUN BACKSPACE    &tog L_PLACEHOLDER &tog L_COLEMAK
             >;
             display-name = "FOO"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
@@ -176,31 +176,38 @@
 
 
 
-// NOTE:  NAVFOO
+// NOTE:  NAV
 //=================================================================================================================================================================================================================
 // Navigation with probably also mouse and maybe functions and more
-        layerNavFoo {
+        layerNav {
             bindings = <
 &none       &none            &none           &none           &none             &none                 &mmv MOVE_UP      &none           &none            &none       &none            &none             &none
 
-&none      &none             &none           &none           &none            &none                  &mmv MOVE_DOWN    &kp K_REDO      &kp K_PASTE      &kp K_COPY  &kp K_CUT        &kp K_UNDO       &none
-&none      &none             &none           &none           &none            &none                  &mmv MOVE_LEFT    &kp LEFT        &kp DOWN         &kp UP      &kp RIGHT        &caps_word       &none
-&none      &none             &none           &none           &none            &none                  &mmv MOVE_RIGHT   &kp HOME        &kp PG_DN        &kp PG_UP   &kp END          &kp INS          &none
+&none      &none             &none           &none           &none            &none                  &mmv MOVE_DOWN    &kp K_REDO      &kp K_PASTE      &kp K_COPY  &kp K_CUT        &kp K_UNDO        &none
+&none      &none             &kp L_ALT       &kp L_CTRL      &kp L_SHIFT      &none                  &mmv MOVE_LEFT    &kp LEFT        &kp DOWN         &kp UP      &kp RIGHT        &caps_word        &none
+&none      &kp K_UNDO        &kp K_CUT       &kp K_COPY      &kp K_PASTE      &kp K_REDO             &mmv MOVE_RIGHT   &kp HOME        &kp PG_DN        &kp PG_UP   &kp END          &kp INS           &none
                                                                                                      &kp C_MUTE                                                                     
             &none            &none           &trans          &trans            &trans                &kp ENTER         &kp ENTER       &kp BSPC         &kp DEL     &none            &none
             >;
-            display-name = "NAVFOO"; sensor-bindings = <&scroll_encoder>;
+            display-name = "NAV"; sensor-bindings = <&scroll_encoder>;
         };
 
 
 
 
 
-// NOTE:  NUM
+
+
+
+
+
+
+
+// NOTE:  NUM_OLD
 //=================================================================================================================================================================================================================
 // Left hand. Numpad plus some symbols. (todo complete symbols)
 // TODO: return these: 
-        layerNum {
+        layerNumOld {
             bindings = <
 &none       &none            &none           &none           &none             &none                 &trans            &none           &none            &none       &none            &none             &none
 
@@ -210,13 +217,13 @@
                                                                                                      &kp C_MUTE                                        
             &none            &none           &kp DOT         &kp N0            &kp MINUS             &kp ENTER         &trans          &trans           &trans      &none            &none
             >;
-            display-name = "NUM"; sensor-bindings = <&scroll_encoder>;          };
+            display-name = "NUM_OLD"; sensor-bindings = <&scroll_encoder>;          };
 
 
-// NOTE:  SYM
+// NOTE:  SYM_OLD
 //=================================================================================================================================================================================================================
 // Left hand
-        layerSym {
+        layerSymOld {
             bindings = <
 &none       &none            &none           &none           &none             &none                 &trans            &none           &none            &none       &none            &none             &none
 
@@ -226,13 +233,13 @@
                                                                                                      &kp C_MUTE      
             &none            &none           &kp LPAR        &kp RPAR          &kp UNDERSCORE        &kp ENTER         &trans          &trans           &trans      &none            &none
             >;
-            display-name = "SYM"; sensor-bindings = <&scroll_encoder>;
+            display-name = "SYM_OLD"; sensor-bindings = <&scroll_encoder>;
         };
 
-// NOTE:  FUN
+// NOTE:  FUN_OLD
 //=================================================================================================================================================================================================================
 // Left hand. Function keys
-        layerFun {
+        layerFunOld {
             bindings = <
 &none       &none            &none           &none           &none             &none                 &trans            &none           &none            &none       &none            &none             &none
 
@@ -242,19 +249,15 @@
                                                                                                      &kp C_MUTE                                                                    
             &none            &none           &kp K_APP       &kp SPACE         &kp TAB               &kp ENTER         &trans          &trans           &trans      &none            &none
             >;
-            display-name = "FUN"; sensor-bindings = <&scroll_encoder>;          };
+            display-name = "FUN_OLD"; sensor-bindings = <&scroll_encoder>;          };
 
 
-
-
-
-
-// NOTE:  NAV
+// NOTE:  NAV_OLD
 //=================================================================================================================================================================================================================
 // Navigation VI style. (see miryoku_babel)
 // Note: CPSWRD means CAPS-WORD. (Nothing to do with password) (actual, babel says it should be &u_caps_word)
 // Note: Not sure those U_xyz items work. maybe then need to be explicitly defined?
-        layerNav {
+        layerNavOld {
             bindings = <
 &none       &none            &none           &none           &none             &none                 &mmv MOVE_UP      &none           &none            &none       &none            &none             &none
 
@@ -264,7 +267,7 @@
                                                                                                      &kp C_MUTE                                                                     
             &none            &none           &trans          &trans            &trans                &kp ENTER         &kp ENTER       &kp BSPC         &kp DEL     &none            &none
             >;
-            display-name = "NAV"; sensor-bindings = <&scroll_encoder>;
+            display-name = "NAV_OLD"; sensor-bindings = <&scroll_encoder>;
         };
 
 // NOTE:  MOUSE
