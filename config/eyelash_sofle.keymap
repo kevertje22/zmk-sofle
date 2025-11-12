@@ -2,7 +2,7 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
 
 #define L_BASE         0
-#define L_PLACEHOLDER  1
+#define L_TEST         1
 #define L_COLEMAK      2
 
 #define L_SYMNUM       3
@@ -99,16 +99,16 @@
 &caps_word  &kp A            &mt LALT S      &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LALT L       &kp SEMI          &kp APOS
 &kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
                                                                                                      &kp C_MUTE
-            &kp LGUI         &none           &lt L_MOUSE ESC &lt L_SYMNUM SPACE &lt L_NAV TAB        &kp ENTER              &lt L_NAV ENTER &lt L_SYMNUM SPACE &lt L_SPECIAL BACKSPACE    &tog L_PLACEHOLDER &tog L_COLEMAK
+            &kp LGUI         &none           &lt L_MOUSE ESC &lt L_SYMNUM SPACE &lt L_NAV TAB        &kp ENTER              &lt L_NAV ENTER &lt L_SYMNUM SPACE &lt L_SPECIAL BACKSPACE    &tog L_TEST &tog L_COLEMAK
             >;
             display-name = "BASE"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
-// NOTE:  PLACEHOLDER
+// NOTE:  L_TEST
 //============
 // note: the right pinky still has semi/colon AND quotes, even though miryoku has only the quotes.
 // note: the right pinky still has BSLH(and pipe?) on the 6th column even though miryoku has those elsewhere
-        layerPlaceholder {
+        layerTest {
             bindings = <
 &none       &none            &none           &none           &none             &none                 &kp UP_ARROW            &none           &none            &none       &none            &none             &none
 
@@ -116,9 +116,9 @@
 &caps_word  &mt LGUI A       &mt LALT S      &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LALT L       &mt LGUI SEMI     &kp APOS
 &kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
                                                                                                      &kp C_MUTE
-        &kp LEFT_GUI &trans                  &trans          &trans            &trans                &trans                  &trans          &trans           &trans              &trans &trans
+        &kp LGUI     &trans                  &trans          &trans            &trans                &kp ENTER               &trans          &trans           &trans              &trans &trans
             >;
-            display-name = "PLACEHOLDER"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            display-name = "TEST"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
 // NOTE:  2 COLEMAK
@@ -130,10 +130,10 @@
             bindings = <
 &none       &none            &none           &none           &none             &none                 &trans                  &none           &none            &none       &none            &none             &none
 
-&trans      &kp Q            &kp W           &kp F           &kp P             &kp B                 &kp DOWN_ARROW          &kp J           &kp L            &kp U       &kp Y            &kp SEMI          &trans
-&trans      &kp A            &mt LALT R      &mt LCTRL S     &mt LSHIFT T      &kp G                 &kp LEFT_ARROW          &kp M           &mt LSHIFT N     &mt LCTRL E &mt LALT I       &kp O             &kp APOS
-&trans      &kp Z            &kp X           &kp C           &kp D             &kp V                 &kp RIGHT_ARROW         &kp K           &kp H            &kp COMMA   &kp DOT          &kp FSLH          &trans
-                                                                                                     &kp C_MUTE
+&trans      &kp Q            &kp W           &kp F           &kp P             &kp B                 &trans                  &kp J           &kp L            &kp U       &kp Y            &kp SEMI          &trans
+&trans      &kp A            &mt LALT R      &mt LCTRL S     &mt LSHIFT T      &kp G                 &trans                  &kp M           &mt LSHIFT N     &mt LCTRL E &mt LALT I       &kp O             &kp APOS
+&trans      &kp Z            &kp X           &kp C           &kp D             &kp V                 &trans                  &kp K           &kp H            &kp COMMA   &kp DOT          &kp FSLH          &trans
+                                                                                                     &trans
         &kp LGUI &trans                      &trans          &trans            &trans                &trans                  &trans          &trans           &trans              &trans &trans
             >;
             display-name = "COLEMAK"; sensor-bindings = <&scroll_encoder>;
