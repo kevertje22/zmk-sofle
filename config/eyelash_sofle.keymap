@@ -45,6 +45,21 @@
         tap-ms = <100>;
     };
     behaviors {
+         // test tap dance. prints 1 or 2 or 3
+         td1: td1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+        };
+         // bt selection tap dance. the point is to only trigger if really intentional. 1 press prints a dot or something. only double click works
+         // note: i call it 1 but internally it is zero based
+         td_bt1: td_bt1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOT>, <&bt BT_SEL 0>;
+        };
     };
     combos {
         compatible = "zmk,combos";
@@ -116,7 +131,7 @@
 &caps_word  &mt LGUI A       &mt LALT S      &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LALT L       &mt LGUI SEMI     &kp APOS
 &kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
                                                                                                      &kp C_MUTE
-        &kp LGUI     &trans                  &trans          &trans            &trans                &kp ENTER               &trans          &trans           &trans              &trans &trans
+        &kp LGUI     &td1                  &trans          &trans            &trans                &kp ENTER               &trans          &trans           &trans              &trans &trans
             >;
             display-name = "TEST"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
@@ -139,18 +154,7 @@
             display-name = "COLEMAK"; sensor-bindings = <&scroll_encoder>;
         };
 
-        // layer_2 {
-        //     bindings = <
-// &none       &none            &none           &none           &none             &none                 &trans            &none           &none            &none       &none            &none             &none
-
-// &none      &bt BT_CLR         &bt BT_CLR_ALL  &trans          &trans           &trans                  &mmv MOVE_DOWN        &kp LC(Y)        &kp LC(V)      &kp LC(C)    &kp LC(X)      &kp LC(Z)        &none
-// &none      &out OUT_USB       &out OUT_BLE    &trans          &trans           &trans                  &mmv MOVE_LEFT        &kp LEFT         &kp DOWN       &kp UP       &kp RIGHT      &caps_word       &none
-// &none      &sys_reset         &trans          &bootloader     &trans           &trans                  &mmv MOVE_RIGHT       &kp HOME         &kp PGDN       &kp PGUP     &kp END        &kp INS          &none
-        //                                                                                                &kp C_MUTE
-        //     &none            &none           &trans          &kp N0            &trans                  &kp ENTER             &kp ENTER        &kp BSPC       &kp DEL      &none          &none
-        //     >;
-        //     display-name = "NOTUSED_2"; sensor-bindings = <&scroll_encoder>;
-        // };
+//&bt BT_CLR         &bt BT_CLR_ALL  &kp LC(Y)        &kp LC(V)      &kp LC(C)    &kp LC(X)      &kp LC(Z)        &out OUT_USB       &out OUT_BLE    &sys_reset         &bootloader 
 
 
 // NOTE:  L_SYMNUM
@@ -210,7 +214,7 @@
 &none      &kp F11            &kp F12         &none           &kp SLCK         &kp PSCRN               &mmv MOVE_LEFT        &kp C_PREV       &kp C_VOL_DN   &kp C_VOL_UP  &kp C_NEXT    &kp C_PP         &kp C_MUTE
 &out OUT_BLE  &bt BT_SEL 0       &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3  &kp PAUSE_BREAK         &mmv MOVE_RIGHT       &none            &kp C_BRI_DN   &kp C_BRI_UP  &none         &none            &out OUT_USB
                                                                                                        &kp C_MUTE
-            &none            &none           &trans          &trans            &trans                  &kp ENTER             &kp C_STOP       &kp C_PP       &kp C_MUTE   &none          &none
+            &td_bt1          &none           &trans          &trans            &trans                  &kp ENTER             &kp C_STOP       &kp C_PP       &kp C_MUTE   &none          &none
             >;
             display-name = "SPECIAL"; sensor-bindings = <&scroll_encoder>;
         };
