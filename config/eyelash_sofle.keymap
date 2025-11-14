@@ -157,10 +157,10 @@
 &none       &none            &none           &none           &none             &none                 &kp UP_ARROW            &none           &none            &none       &none            &none             &none
 
 &kp ESC     &kp Q            &kp W           &kp E           &kp R             &kp T                 &kp DOWN_ARROW          &kp Y           &kp U            &kp I       &kp O            &kp P             &kp BACKSPACE
-&caps_word  &mt LGUI A       &mt LALT S      &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LALT L       &mt LGUI SEMI     &kp APOS
+&kp TAB     &kp A            &mt LALT S      &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt RALT L       &kp SEMI          &kp APOS
 &kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
                                                                                                      &kp C_MUTE
-        &kp LGUI     &td1                  &lt LALT DEL        &trans            &trans                &kp ENTER               &trans          &trans           &lt RALT BACKSPACE              &trans &tog L_JUMP
+        &kp LGUI     &td1                  &lt LALT DEL        &trans            &lt L_NAV DOT       &kp ENTER               &trans          &trans           &lt RALT BACKSPACE              &trans &tog L_JUMP
             >;
             display-name = "TEST"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
