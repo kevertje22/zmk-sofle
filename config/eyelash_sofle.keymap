@@ -10,6 +10,8 @@
 #define L_SPECIAL      5
 #define L_MOUSE        6 
 
+#define L_JUMP         7 
+
 
 // TODO: convert left ctrl and alt to right versions, where appropriate
 // TODO maybe move the numbers to bottom row?
@@ -141,7 +143,7 @@
 &caps_word  &kp A            &mt LALT S      &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LALT L       &kp SEMI          &kp APOS
 &kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
                                                                                                      &kp C_MUTE
-            &kp LGUI         &none           &lt L_MOUSE ESC &lt L_SYMNUM SPACE &lt L_NAV TAB        &kp ENTER              &lt L_NAV ENTER &lt L_SYMNUM SPACE &lt L_SPECIAL BACKSPACE    &tog L_TEST &tog L_COLEMAK
+            &kp LGUI         &none           &lt L_MOUSE ESC &lt L_SYMNUM SPACE &lt L_NAV TAB        &kp ENTER              &lt L_NAV ENTER &lt L_SYMNUM SPACE &lt L_SPECIAL BACKSPACE    &tog L_TEST    &tog L_COLEMAK
             >;
             display-name = "BASE"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
@@ -158,7 +160,7 @@
 &caps_word  &mt LGUI A       &mt LALT S      &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LALT L       &mt LGUI SEMI     &kp APOS
 &kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
                                                                                                      &kp C_MUTE
-        &kp LGUI     &td1                  &trans          &trans            &trans                &kp ENTER               &trans          &trans           &trans              &trans &trans
+        &kp LGUI     &td1                  &lt LALT DEL        &trans            &trans                &kp ENTER               &trans          &trans           &lt RALT BACKSPACE              &trans &tog L_JUMP
             >;
             display-name = "TEST"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
@@ -262,6 +264,22 @@
             &none            &none           &trans          &trans            &trans                  &kp ENTER             &mkp RCLK        &mkp LCLK      &mkp MCLK     &none           &none
             >;
             display-name = "MOUSE"; sensor-bindings = <&scroll_encoder>;
+        };
+
+// NOTE:  L_JUMP
+// this concept needs more thought
+//=================================================================================================================================================================================================================
+        layerJump {
+            bindings = <
+&none       &none            &none           &none           &none             &none                 &kp UP_ARROW            &none           &none            &none       &none            &none             &none
+
+&kp ESC     &kp Q            &kp W           &kp E           &kp R             &kp T                 &kp DOWN_ARROW          &tog L_COLEMAK  &tog L_TEST      &tog L_MOUSE &tog L_SPECIAL  &kp P             &kp DEL
+&caps_word  &kp A            &mt LALT S      &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LALT L       &kp SEMI          &kp APOS
+&kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
+                                                                                                     &kp C_MUTE
+            &kp LGUI         &none           &lt L_MOUSE ESC &lt L_SYMNUM SPACE &lt L_NAV TAB        &kp ENTER              &lt L_NAV ENTER &lt L_SYMNUM SPACE &lt L_SPECIAL BACKSPACE    &none    &tog L_JUMP
+            >;
+            display-name = "JUMP"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
 
