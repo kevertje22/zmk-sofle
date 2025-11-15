@@ -138,29 +138,28 @@
         layerBase {
             bindings = <
 &none       &none            &none           &none           &none             &none                 &kp UP_ARROW            &none           &none            &none       &none            &none             &none
-
+ 
 &kp ESC     &kp Q            &kp W           &kp E           &kp R             &kp T                 &kp DOWN_ARROW          &kp Y           &kp U            &kp I       &kp O            &kp P             &kp DEL
-&caps_word  &kp A            &mt LALT S      &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &mt LCTRL K &mt LALT L       &kp SEMI          &kp APOS
-&kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
+&mt LCTRL TAB &kp A          &kp S           &kp D           &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &kp K       &kp L            &kp SEMI          &mt RCTRL APOS
+&kp LCTRL   &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &mt RGUI COMMA  &kp DOT      &kp FSLH          &kp RCTRL
                                                                                                      &kp C_MUTE
-            &kp LGUI         &to L_BASE      &lt L_MOUSE ESC &lt L_SYMNUM SPACE &lt L_NAV TAB        &kp ENTER              &lt L_NAV ENTER &lt L_SYMNUM SPACE &lt L_SPECIAL BACKSPACE    &to L_TEST         &to L_JUMP
+        &kp LGUI   &to L_BASE                &mt LALT ESC    &lt L_SYMNUM SPACE  &lt L_NAV TAB              &kp ENTER       &lt L_NAV ENTER &lt L_SYMNUM SPACE  &mt RALT BACKSPACE        &to L_TEST  &to L_JUMP
             >;
             display-name = "BASE"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
 // NOTE:  L_TEST
-//============
-// note: the right pinky still has semi/colon AND quotes, even though miryoku has only the quotes.
-// note: the right pinky still has BSLH(and pipe?) on the 6th column even though miryoku has those elsewhere
+//=================================================================================================================================================================================================================
+//
         layerTest {
             bindings = <
 &none       &none            &none           &none           &none             &none                 &kp UP_ARROW            &none           &none            &none       &none            &none             &none
  
 &kp ESC     &kp Q            &kp W           &kp E           &kp R             &kp T                 &kp DOWN_ARROW          &kp Y           &kp U            &kp I       &kp O            &kp P             &kp DEL
 &mt LCTRL TAB &kp A          &kp S           &kp D           &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &kp K       &kp L            &kp SEMI          &mt RCTRL APOS
-&kp LCTRL   &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &mt RGUI COMMA  &mt RALT DOT &mt RCTRL FSLH    &kp RCTRL
+&kp LCTRL   &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &mt RGUI COMMA  &kp DOT      &kp FSLH          &kp RCTRL
                                                                                                      &kp C_MUTE
-        &kp LGUI             &to L_BASE                &mt LALT ESC      &trans            &lt L_NAV DOT       &kp ENTER               &trans          &trans           &mt RALT BACKSPACE   &to L_TEST      &to L_JUMP
+        &kp LGUI   &to L_BASE                &mt LALT ESC    &lt L_SYMNUM SPACE  &lt L_NAV TAB              &kp ENTER       &lt L_NAV ENTER &lt L_SYMNUM SPACE  &mt RALT BACKSPACE        &to L_TEST  &to L_JUMP
             >;
             display-name = "TEST"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
