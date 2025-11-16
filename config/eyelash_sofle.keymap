@@ -239,10 +239,10 @@
 &none       &none            &none           &none           &none             &none                 &mmv MOVE_UP            &none           &none            &none       &none            &none             &none
 
 &none      &kp F1             &kp F2          &kp F3          &kp F4           &kp F5                  &mmv MOVE_DOWN        &kp F6           &kp F7         &kp F8        &kp F9        &kp F10          &none
-&none      &kp F11            &kp F12         &none           &kp SLCK         &kp PSCRN               &mmv MOVE_LEFT        &kp C_PREV       &kp C_VOL_DN   &kp C_VOL_UP  &kp C_NEXT    &kp C_PP         &kp C_MUTE
-&out OUT_BLE  &bt BT_SEL 0       &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3  &kp PAUSE_BREAK         &mmv MOVE_RIGHT       &none            &kp C_BRI_DN   &kp C_BRI_UP  &none         &none            &out OUT_USB
+&none      &kp F11            &kp F12         &none           &kp SLCK         &kp PSCRN               &mmv MOVE_LEFT        &none            &none          &none         &none         &none            &none
+&out OUT_BLE  &bt BT_SEL 0       &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3  &kp PAUSE_BREAK         &mmv MOVE_RIGHT       &none            &none          &none         &none         &none            &out OUT_USB
                                                                                                        &kp C_MUTE
-            &td_bt1          &trans           &trans          &trans            &trans                  &kp ENTER             &kp C_STOP       &kp C_PP       &kp C_MUTE   &trans          &trans
+            &td_bt1          &trans           &trans          &trans            &trans                 &kp ENTER            &trans        &trans      &trans             &trans       &trans
             >;
             display-name = "SPECIAL"; sensor-bindings = <&scroll_encoder>;
         };
@@ -256,11 +256,11 @@
             bindings = <
 &none       &none            &none           &none           &none             &none                   &mmv MOVE_UP          &none           &none            &none       &none            &none             &none
 
-&none      &none              &none           &none           &none            &none                   &mmv MOVE_DOWN        &kp  K_REDO      &kp  K_PASTE   &kp  K_COPY  &kp  K_CUT      &kp K_UNDO      &none
-&none      &none              &kp LALT        &kp LCTRL       &kp LSHIFT       &none                   &mmv MOVE_LEFT        &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none           &none
+&none      &none              &kp C_PREV      &kp C_PP        &kp C_NEXT       &none                   &mmv MOVE_DOWN        &kp  K_REDO      &kp  K_PASTE   &kp  K_COPY  &kp  K_CUT      &kp K_UNDO      &none
+&none      &kp C_BRI_DN       &kp C_BRI_UP    &kp C_VOL_UP    &kp C_VOL_DN     &kp C_MUTE              &mmv MOVE_LEFT        &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none           &none
 &none      &kp K_UNDO         &kp K_CUT       &kp K_COPY      &kp K_PASTE      &kp K_REDO              &mmv MOVE_RIGHT       &msc SCRL_LEFT   &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none           &none
                                                                                                        &kp C_MUTE
-            &trans            &trans           &trans          &trans            &trans                  &kp ENTER             &mkp RCLK        &mkp LCLK      &mkp MCLK     &trans           &trans
+            &trans            &trans          &trans          &trans            &trans                 &kp ENTER             &mkp RCLK        &mkp LCLK      &mkp MCLK     &trans           &trans
             >;
             display-name = "MOUSE"; sensor-bindings = <&scroll_encoder>;
         };
