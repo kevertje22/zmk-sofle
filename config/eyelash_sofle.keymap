@@ -12,7 +12,6 @@
 
 #define L_JUMP         7 
 
-
 // TODO: convert left ctrl and alt to right versions, where appropriate
 // TODO maybe move the numbers to bottom row?
 
