@@ -1,0 +1,318 @@
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
+
+#define L_BASE         0
+#define L_TEST         1
+#define L_COLEMAK      2
+
+#define L_SYMNUM       3
+#define L_NAV          4
+#define L_SPECIAL      5
+#define L_MOUSE        6 
+
+#define L_JUMP         7 
+
+// TODO: convert left ctrl and alt to right versions, where appropriate
+// TODO maybe move the numbers to bottom row?
+// idea: add 'one handed mode' layers. e.g. for arrow keys.
+
+#include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/rgb.h>
+
+&mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
+&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
+&msc {
+    acceleration-exponent = <1>;      // 0
+    time-to-max-speed-ms = <100>;       // 300
+    delay-ms = <0>;                   // 0
+};
+&mmv {
+    time-to-max-speed-ms = <500>;
+    acceleration-exponent = <1>;
+    trigger-period-ms = <16>;
+};
+&soft_off { hold-time-ms = <2000>; };
+
+/ {
+    scroll_encoder: scroll_encoder {
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        tap-ms = <100>;
+    };
+    behaviors {
+         // test tap dance. prints 1 or 2 or 3
+         td1: td1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+        };
+         // bt selection tap dance. the point is to only trigger if really intentional. 1 press prints a dot or something. only triple click works
+         // note: i call it 1 but internally it is zero based
+         td_bt1: td_bt1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOT>, <&kp DOT>, <&bt BT_SEL 0>;
+        };
+    };
+    combos {
+        compatible = "zmk,combos";
+        softoff {
+            bindings = <&soft_off>;
+            key-positions = <14 28 40>;
+        };
+        // only active on base and testing layers
+        // the key positions -- i counted them from below layout sections
+        combo_jk {
+            timeout-ms = <50>;
+            key-positions = <30 34>;
+            bindings = <&caps_word>;
+            layers = <0 1>;
+        };
+
+        //  test if the key positions are correct. see glossary below
+        combo_qw {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&kp X>;
+            layers = <0 1>;
+        };
+
+        // named after the index finger position. the adjacent middle and ring fingers are also pressed
+        // to mouse layer
+        combo_mxx {
+            timeout-ms = <50>;
+            key-positions = <47 48 49>;
+            bindings = <&to L_MOUSE>;
+            //layers = <0 1>;
+        };
+        // to home layer 
+        combo_hxx {
+            timeout-ms = <50>;
+            key-positions = <33 34 35>;
+            bindings = <&to L_BASE>;
+            //layers = <0 1>;
+        };
+        // one-off special/functions layer (aka sticky layer)
+        combo_fxx {
+            timeout-ms = <50>;
+            key-positions = <28 29 30>;
+            bindings = <&sl L_SPECIAL>;
+            //layers = <0 1>;
+        };
+        // caps-word
+        combo_wxx {
+            timeout-ms = <50>;
+            key-positions = <15 16 17>;
+            bindings = <&caps_word>;
+            //layers = <0 1>;
+        };
+    };
+
+    // but just &kp LC(C) is simpler than macro_copy..
+    macros {
+    //    macro_copy: macro_copy {
+    //    compatible = "zmk,behavior-macro";
+    //    #binding-cells = <0>;
+    //    bindings = <&kp LC(C)>;
+    //    };
+    //    macro_paste: macro_paste {
+    //    compatible = "zmk,behavior-macro";
+    //    #binding-cells = <0>;
+    //    bindings = <&kp LC(V)>;
+    //    };
+    //    macro_cut: macro_cut {
+    //    compatible = "zmk,behavior-macro";
+    //    #binding-cells = <0>;
+    //    bindings = <&kp LC(X)>;
+    //    };
+    //    macro_redo: macro_redo {
+    //    compatible = "zmk,behavior-macro";
+    //    #binding-cells = <0>;
+    //    bindings = <&kp LC(Y)>;
+    //    };
+    //    macro_undo: macro_undo {
+    //    compatible = "zmk,behavior-macro";
+    //    #binding-cells = <0>;
+    //    bindings = <&kp LC(Z)>;
+    //    };
+    };
+
+
+    keymap {
+        compatible = "zmk,keymap";
+
+
+// NOTE:  GLOSSARY FOR KEY POSITIONS (todo: fill it in)
+//=================================================================================================================================================================================================================
+//
+// 0       1                  2                3            4                  5                   (6)                         7                  8               9                 10           11             12
+
+// 13      q(14)              w(15)            e(16)        r(17               t(18                (6)                       y(20                 u(0             i(22)            o(23)         p(0)           25
+// 26      a                  s                d            f(30)              g(31)               (6)                       h(                  j(34)            k(35             l(36          37             38
+// 39      z(40               x(41             c(42         v(43               b(44                (6)                       n(46                m(47             48               49            50             51 
+//                                                                                                 (6)
+//                                                     53 0           0  0  0                                              0 0 0             0 0
+
+// NOTE:  0 BASE
+//=================================================================================================================================================================================================================
+//
+        layerBase {
+            bindings = <
+&none       &none            &none           &none           &none             &none                 &kp UP_ARROW            &none           &none            &none       &none            &none             &none
+ 
+&kp ESC     &kp Q            &kp W           &kp E           &kp R             &kp T                 &kp DOWN_ARROW          &kp Y           &kp U            &kp I       &kp O            &kp P             &kp DEL
+&mt LCTRL TAB &kp A          &kp S           &kp D           &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &kp K       &kp L            &kp SEMI          &mt RCTRL APOS
+&kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &kp RGUI COMMA  &kp DOT      &kp FSLH          &kp RSHIFT
+                                                                                                     &kp C_MUTE
+        &kp LGUI   &to L_TEST                &mt LALT ESC    &lt L_SYMNUM SPACE  &lt L_NAV TAB              &kp ENTER       &lt L_NAV ENTER &lt L_SYMNUM SPACE  &mt RALT BACKSPACE        &to L_BASE  &to L_JUMP
+            >;
+            display-name = "BASE"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+        };
+
+// NOTE:  L_TEST
+//=================================================================================================================================================================================================================
+//
+        layerTest {
+            bindings = <
+&none       &none            &none           &none           &none             &none                 &kp UP_ARROW            &none           &none            &none       &none            &none             &none
+ 
+&kp ESC     &kp Q            &kp W           &kp E           &kp R             &kp T                 &kp DOWN_ARROW          &kp Y           &kp U            &kp I       &kp O            &kp P             &kp DEL
+&mt LCTRL TAB &kp A          &kp S           &kp D           &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &kp K       &kp L            &kp SEMI          &mt RCTRL APOS
+&kp LCTRL   &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &mt RGUI COMMA  &kp DOT      &kp FSLH          &kp RCTRL
+                                                                                                     &kp C_MUTE
+        &kp LGUI   &to L_TEST                &mt LALT ESC    &lt L_SYMNUM SPACE  &lt L_NAV TAB              &kp ENTER       &lt L_NAV ENTER &lt L_SYMNUM SPACE  &mt RALT BACKSPACE        &to L_BASE  &to L_JUMP
+            >;
+            display-name = "TEST"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+        };
+
+// NOTE:  2 COLEMAK
+//=================================================================================================================================================================================================================
+// colemak dh
+// english letter usage sorted by freq (according to ai): E T A O I N S R H L D C U M F P G W Y B V K X J Q Z
+// and dutch:                                             E N A T I R O D L S G H V K M U P W J B Z C F X Y Q
+        layerColemak {
+            bindings = <
+&none       &none            &none           &none           &none             &none                 &trans                  &none           &none            &none       &none            &none             &none
+
+&trans      &kp Q            &kp W           &kp F           &kp P             &kp B                 &trans                  &kp J           &kp L            &kp U       &kp Y            &kp SEMI          &trans
+&trans      &kp A            &mt LALT R      &mt LCTRL S     &mt LSHIFT T      &kp G                 &trans                  &kp M           &mt LSHIFT N     &mt LCTRL E &mt LALT I       &kp O             &kp APOS
+&trans      &kp Z            &kp X           &kp C           &kp D             &kp V                 &trans                  &kp K           &kp H            &kp COMMA   &kp DOT          &kp FSLH          &trans
+                                                                                                     &trans
+        &kp LGUI &trans                      &trans          &trans            &trans                &trans                  &trans          &trans           &trans              &trans &trans
+            >;
+            display-name = "COLEMAK"; sensor-bindings = <&scroll_encoder>;
+        };
+
+//&bt BT_CLR         &bt BT_CLR_ALL  &kp LC(Y)        &kp LC(V)      &kp LC(C)    &kp LC(X)      &kp LC(Z)        &out OUT_USB       &out OUT_BLE    &sys_reset         &bootloader 
+
+
+// NOTE:  L_SYMNUM
+//=================================================================================================================================================================================================================
+// TODO: idea: maybe swapping the number row with the symbol row is more intuitive?
+//
+        layerSymNum {
+            bindings = <
+&none       &none            &none           &none           &none             &none                 &trans            &none           &none            &none       &none            &none             &none
+
+&kp TILDE   &kp EXCL         &kp AT          &kp HASH        &kp DOLLAR        &kp PRCNT             &kp DOWN_ARROW    &kp CARET       &kp AMPS         &kp STAR    &kp LPAR         &kp RPAR          &kp PIPE
+&kp MINUS   &kp N1           &mt LALT N2     &mt LCTRL N3    &mt LSHIFT N4     &kp N5                &kp LEFT_ARROW    &kp N6          &mt LSHIFT N7    &mt LCTRL N8 &mt LALT N9     &kp N0            &kp PLUS
+&kp UNDERSCORE &kp LBRC      &kp LBKT        &kp RBKT        &kp RBRC          &kp DOT               &kp RIGHT_ARROW   &kp BSLH        &kp EQUAL        &trans      &trans           &trans            &kp GRAVE
+                                                                                                     &kp C_MUTE
+            &trans   &trans           &kp DOT         &kp SPACE         &kp DOT                      &kp ENTER         &trans          &trans           &trans      &trans            &trans
+            >;
+            display-name = "SYMNUM"; sensor-bindings = <&scroll_encoder>;
+        };
+
+
+
+// NOTE:  L_NAV
+//=================================================================================================================================================================================================================
+// Navigation with probably also mouse and maybe functions and more
+        layerNav {
+            bindings = <
+&none       &none            &none           &none           &none             &none                 &mmv MOVE_UP      &none           &none            &none       &none            &none             &none
+
+&none      &none             &none           &none           &none            &none                  &mmv MOVE_DOWN    &kp K_REDO      &kp K_PASTE      &kp K_COPY  &kp K_CUT        &kp K_UNDO        &none
+&none      &none             &kp LALT        &kp LCTRL       &kp LSHIFT       &none                  &mmv MOVE_LEFT    &kp LEFT        &kp DOWN         &kp UP      &kp RIGHT        &caps_word        &none
+&none      &kp K_UNDO        &kp K_CUT       &kp K_COPY      &kp K_PASTE      &kp K_REDO             &mmv MOVE_RIGHT   &kp HOME        &kp PG_DN        &kp PG_UP   &kp END          &kp INS           &none
+                                                                                                     &kp C_MUTE                                                                     
+            &trans   &trans           &trans          &trans            &trans                       &kp ENTER         &kp ENTER       &kp BSPC         &kp DEL     &trans            &trans
+            >;
+            display-name = "NAV"; sensor-bindings = <&scroll_encoder>;
+        };
+
+
+// NOTE: L_SPECIAL
+//=================================================================================================================================================================================================================
+// Media keys, Function keys, Other system functionality, such a printscreen, bluetooth
+//
+// C_NEXT: nextsong
+// C_PREV: previoussong
+// C_PP: playpause
+// C_STOP: stop
+// Note, there is C_MUTE, but also K_MUTE. and maybe more
+// OUT_USB switches to USB connectivity
+// OUT_BLE switches to BLUETOOTH connectivity
+//
+// TODO: add f11 f12
+        layerSpecial {
+            bindings = <
+&none       &none            &none           &none           &none             &none                 &mmv MOVE_UP            &none           &none            &none       &none            &none             &none
+
+&none      &kp F1             &kp F2          &kp F3          &kp F4           &kp F5                  &mmv MOVE_DOWN        &kp F6           &kp F7         &kp F8        &kp F9        &kp F10          &none
+&none      &kp F11            &kp F12         &none           &kp SLCK         &kp PSCRN               &mmv MOVE_LEFT        &none            &none          &none         &none         &none            &none
+&out OUT_BLE  &bt BT_SEL 0       &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3  &kp PAUSE_BREAK         &mmv MOVE_RIGHT       &none            &none          &none         &none         &none            &out OUT_USB
+                                                                                                       &kp C_MUTE
+            &td_bt1          &trans           &trans          &trans            &trans                 &kp ENTER            &trans        &trans      &trans             &trans       &trans
+            >;
+            display-name = "SPECIAL"; sensor-bindings = <&scroll_encoder>;
+        };
+
+
+
+
+// NOTE:  L_MOUSE
+//=================================================================================================================================================================================================================
+        layerMouse {
+            bindings = <
+&none       &none            &none           &none           &none             &none                   &mmv MOVE_UP          &none           &none            &none       &none            &none             &none
+
+&none      &none              &kp C_PREV      &kp C_PP        &kp C_NEXT       &none                   &mmv MOVE_DOWN        &kp  K_REDO      &kp  K_PASTE   &kp  K_COPY  &kp  K_CUT      &kp K_UNDO      &none
+&none      &kp C_BRI_DN       &kp C_BRI_UP    &kp C_VOL_UP    &kp C_VOL_DN     &kp C_MUTE              &mmv MOVE_LEFT        &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none           &none
+&none      &kp K_UNDO         &kp K_CUT       &kp K_COPY      &kp K_PASTE      &kp K_REDO              &mmv MOVE_RIGHT       &msc SCRL_LEFT   &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none           &none
+                                                                                                       &kp C_MUTE
+            &trans            &trans          &trans          &trans            &trans                 &kp ENTER             &mkp RCLK        &mkp LCLK      &mkp MCLK     &trans           &trans
+            >;
+            display-name = "MOUSE"; sensor-bindings = <&scroll_encoder>;
+        };
+
+// NOTE:  L_JUMP
+// this concept needs more thought
+//=================================================================================================================================================================================================================
+        layerJump {
+            bindings = <
+&none       &none            &none           &none           &none             &none                 &kp UP_ARROW            &none           &none            &none       &none            &none             &none
+
+&kp ESC     &kp Q            &kp W           &kp E           &kp R             &kp T                 &kp DOWN_ARROW          &to L_COLEMAK  &to L_TEST      &to L_MOUSE &to L_SPECIAL  &kp P             &kp DEL
+&caps_word  &kp A            &to L_SPECIAL   &mt LCTRL D     &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp X           &mt LSHIFT J     &mt LCTRL K &mt LALT L       &kp SEMI          &kp APOS
+&kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &to L_MOUSE      &kp COMMA   &kp DOT          &kp FSLH          &kp RSHIFT
+                                                                                                     &kp C_MUTE
+            &kp LGUI         &trans          &lt L_MOUSE ESC &lt L_SYMNUM SPACE &lt L_NAV TAB        &kp ENTER              &lt L_NAV ENTER &lt L_SYMNUM SPACE &lt L_SPECIAL BACKSPACE    &trans    &trans
+            >;
+            display-name = "JUMP"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+        };
+
+
+
+
+    };
+};

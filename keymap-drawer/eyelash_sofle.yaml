@@ -535,5 +535,5 @@ combos:
   k: {t: BASE, h: toggle}
 - p: [28, 29, 30]
   k: {t: SPECIAL, h: '$$mdi:gesture-tap-hold$$'}
-- p: [28, 29, 30]
+- p: [15, 16, 17]
   k: $$mdi:alpha-w-box$$

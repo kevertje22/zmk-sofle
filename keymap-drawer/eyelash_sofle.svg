@@ -711,10 +711,10 @@ rect.held, rect.combo.held {
 </a><use href="#mdi:gesture-tap-hold" xlink:href="#mdi:gesture-tap-hold" x="188" y="141" height="15" width="15.0" class="combo hold glyph mdi:gesture-tap-hold"/>
 </g>
 <g class="combo combopos-6">
-<path d="M196,145 l-37,2" class="combo"/>
-<path d="M196,145 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="182" y="132" width="28" height="26" class="combo"/>
-<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="136" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
+<path d="M196,89 l-37,2" class="combo"/>
+<path d="M196,89 l37,2" class="combo"/>
+<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
+<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="80" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
 </g>
 </g>
 </g>
@@ -1107,10 +1107,10 @@ rect.held, rect.combo.held {
 </a><use href="#mdi:gesture-tap-hold" xlink:href="#mdi:gesture-tap-hold" x="188" y="141" height="15" width="15.0" class="combo hold glyph mdi:gesture-tap-hold"/>
 </g>
 <g class="combo combopos-6">
-<path d="M196,145 l-37,2" class="combo"/>
-<path d="M196,145 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="182" y="132" width="28" height="26" class="combo"/>
-<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="136" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
+<path d="M196,89 l-37,2" class="combo"/>
+<path d="M196,89 l37,2" class="combo"/>
+<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
+<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="80" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
 </g>
 </g>
 </g>
@@ -1478,10 +1478,10 @@ rect.held, rect.combo.held {
 </a><use href="#mdi:gesture-tap-hold" xlink:href="#mdi:gesture-tap-hold" x="188" y="141" height="15" width="15.0" class="combo hold glyph mdi:gesture-tap-hold"/>
 </g>
 <g class="combo combopos-4">
-<path d="M196,145 l-37,2" class="combo"/>
-<path d="M196,145 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="182" y="132" width="28" height="26" class="combo"/>
-<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="136" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
+<path d="M196,89 l-37,2" class="combo"/>
+<path d="M196,89 l37,2" class="combo"/>
+<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
+<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="80" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
 </g>
 </g>
 </g>
@@ -1862,10 +1862,10 @@ rect.held, rect.combo.held {
 </a><use href="#mdi:gesture-tap-hold" xlink:href="#mdi:gesture-tap-hold" x="188" y="141" height="15" width="15.0" class="combo hold glyph mdi:gesture-tap-hold"/>
 </g>
 <g class="combo combopos-4">
-<path d="M196,145 l-37,2" class="combo"/>
-<path d="M196,145 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="182" y="132" width="28" height="26" class="combo"/>
-<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="136" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
+<path d="M196,89 l-37,2" class="combo"/>
+<path d="M196,89 l37,2" class="combo"/>
+<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
+<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="80" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
 </g>
 </g>
 </g>
@@ -2229,10 +2229,10 @@ rect.held, rect.combo.held {
 </a><use href="#mdi:gesture-tap-hold" xlink:href="#mdi:gesture-tap-hold" x="188" y="141" height="15" width="15.0" class="combo hold glyph mdi:gesture-tap-hold"/>
 </g>
 <g class="combo combopos-4">
-<path d="M196,145 l-37,2" class="combo"/>
-<path d="M196,145 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="182" y="132" width="28" height="26" class="combo"/>
-<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="136" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
+<path d="M196,89 l-37,2" class="combo"/>
+<path d="M196,89 l37,2" class="combo"/>
+<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
+<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="80" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
 </g>
 </g>
 </g>
@@ -2603,10 +2603,10 @@ rect.held, rect.combo.held {
 </a><use href="#mdi:gesture-tap-hold" xlink:href="#mdi:gesture-tap-hold" x="188" y="141" height="15" width="15.0" class="combo hold glyph mdi:gesture-tap-hold"/>
 </g>
 <g class="combo combopos-4">
-<path d="M196,145 l-37,2" class="combo"/>
-<path d="M196,145 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="182" y="132" width="28" height="26" class="combo"/>
-<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="136" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
+<path d="M196,89 l-37,2" class="combo"/>
+<path d="M196,89 l37,2" class="combo"/>
+<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
+<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="80" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
 </g>
 </g>
 </g>
@@ -2971,10 +2971,10 @@ rect.held, rect.combo.held {
 </a><use href="#mdi:gesture-tap-hold" xlink:href="#mdi:gesture-tap-hold" x="188" y="141" height="15" width="15.0" class="combo hold glyph mdi:gesture-tap-hold"/>
 </g>
 <g class="combo combopos-4">
-<path d="M196,145 l-37,2" class="combo"/>
-<path d="M196,145 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="182" y="132" width="28" height="26" class="combo"/>
-<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="136" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
+<path d="M196,89 l-37,2" class="combo"/>
+<path d="M196,89 l37,2" class="combo"/>
+<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
+<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="80" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
 </g>
 </g>
 </g>
@@ -3365,10 +3365,10 @@ rect.held, rect.combo.held {
 </a><use href="#mdi:gesture-tap-hold" xlink:href="#mdi:gesture-tap-hold" x="188" y="141" height="15" width="15.0" class="combo hold glyph mdi:gesture-tap-hold"/>
 </g>
 <g class="combo combopos-4">
-<path d="M196,145 l-37,2" class="combo"/>
-<path d="M196,145 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="182" y="132" width="28" height="26" class="combo"/>
-<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="136" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
+<path d="M196,89 l-37,2" class="combo"/>
+<path d="M196,89 l37,2" class="combo"/>
+<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
+<use href="#mdi:alpha-w-box" xlink:href="#mdi:alpha-w-box" x="187" y="80" height="18" width="18.0" class="combo tap glyph mdi:alpha-w-box"/>
 </g>
 </g>
 </g>
