@@ -141,7 +141,7 @@
  
 &kp ESC     &kp Q            &kp W           &kp E           &kp R             &kp T                 &kp DOWN_ARROW          &kp Y           &kp U            &kp I       &kp O            &kp P             &kp DEL
 &mt LCTRL TAB &kp A          &kp S           &kp D           &mt LSHIFT F      &kp G                 &kp LEFT_ARROW          &kp H           &mt LSHIFT J     &kp K       &kp L            &kp SEMI          &mt RCTRL APOS
-&kp LCTRL   &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &mt RGUI COMMA  &kp DOT      &kp FSLH          &kp RCTRL
+&kp LSHIFT  &kp Z            &kp X           &kp C           &kp V             &kp B                 &kp RIGHT_ARROW         &kp N           &kp M            &mt RGUI COMMA  &kp DOT      &kp FSLH          &kp RSHIFT
                                                                                                      &kp C_MUTE
         &kp LGUI   &to L_TEST                &mt LALT ESC    &lt L_SYMNUM SPACE  &lt L_NAV TAB              &kp ENTER       &lt L_NAV ENTER &lt L_SYMNUM SPACE  &mt RALT BACKSPACE        &to L_BASE  &to L_JUMP
             >;
