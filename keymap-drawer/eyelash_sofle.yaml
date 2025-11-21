@@ -380,7 +380,7 @@ layers:
   - OUT USB
   - $$mdi:volume-off$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&td td_bt1'
+  - '&td_bt1'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
