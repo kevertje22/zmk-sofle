@@ -175,7 +175,7 @@
             &mt LCTRL TAB &kp A &kp S &kp D &mt LSHIFT F &kp G  &kp LEFT_ARROW    &kp H &mt RSHIFT J &kp K &kp L &kp SEMI &mt RCTRL APOS
             &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B  &kp RIGHT_ARROW   &kp N &kp M &mt RGUI COMMA &kp DOT &kp FSLH &kp RSHIFT
                                                   &kp C_MUTE
-&none &none     &mt LALT ESC &lt L_SYMNUM SPACE &lt L_NAV TAB  &kp ENTER         &lt L_NAV ENTER &lt L_SYMNUM SPACE &mt RALT BACKSPACE      &none &none
+&none &none     &mt LALT ESC &kp SPACE &lt L_NAV TAB  &kp ENTER         &lt L_NAV ENTER &lt L_SYMNUM SPACE &mt RALT BACKSPACE      &none &none
 
             >; display-name = "Base"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>; };
 
@@ -221,9 +221,9 @@
        &none  &none &none &none &none &none       &kp UP_ARROW           &none &none &none &none &none &none
             &kp TILDE &kp EXCL &kp AT &kp HASH &kp DOLLAR &kp PRCNT  &kp UP_ARROW      &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp PIPE
             &kp MINUS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5  &kp LEFT_ARROW    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp PLUS
-            &kp UNDERSCORE &kp LBRC &kp LBKT &kp RBKT &kp RBRC &kp DOT  &kp RIGHT_ARROW   &kp BSLH &kp EQUAL &trans &trans &trans &kp GRAVE
+            &kp UNDERSCORE &kp LBKT &kp RBKT &kp LBRC &kp RBRC &kp PLUS  &kp RIGHT_ARROW   &kp BSLH &kp EQUAL &trans &trans &trans &kp GRAVE
                                                   &kp C_MUTE
-&none &none     &trans &trans &kp DOT  &kp ENTER         &kp ENTER &trans &trans      &none &none
+&none &none     &kp UNDERSCORE &trans &kp MINUS  &kp ENTER         &kp ENTER &trans &trans      &none &none
 
             >; display-name = "SymNum"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>; };
 
