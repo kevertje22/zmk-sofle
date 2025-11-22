@@ -175,7 +175,7 @@
             &mt LCTRL TAB &kp A &kp S &kp D &mt LSHIFT F &kp G  &kp LEFT_ARROW    &kp H &mt RSHIFT J &kp K &kp L &kp SEMI &mt RCTRL APOS
             &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B  &kp RIGHT_ARROW   &kp N &kp M &mt RGUI COMMA &kp DOT &kp FSLH &kp RSHIFT
                                                   &kp C_MUTE
-&none &none     &mt LALT ESC &lt L_SYMNUM SPACE &lt L_NAV TAB  &kp ENTER        &none &none     &lt L_NAV ENTER &lt L_SYMNUM SPACE &mt RALT BACKSPACE
+&none &none     &mt LALT ESC &lt L_SYMNUM SPACE &lt L_NAV TAB  &kp ENTER         &lt L_NAV ENTER &lt L_SYMNUM SPACE &mt RALT BACKSPACE      &none &none
 
             >; display-name = "Base"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>; };
 
@@ -191,7 +191,7 @@
             &mt LCTRL TAB &kp A &kp S &kp D &mt LSHIFT F &kp G  &kp LEFT_ARROW    &kp H &mt LSHIFT J &kp K &kp L &kp SEMI &mt RCTRL APOS
             &kp LCTRL &kp Z &kp X &kp C &kp V &kp B  &kp RIGHT_ARROW   &kp N &kp M &mt RGUI COMMA &kp DOT &kp FSLH &kp RCTRL
                                                   &kp C_MUTE
-&none &none     &mt LALT ESC &lt L_SYMNUM SPACE &lt L_NAV TAB  &kp ENTER        &none &none     &lt L_NAV ENTER &lt L_SYMNUM SPACE &mt RALT BACKSPACE
+&none &none     &mt LALT ESC &lt L_SYMNUM SPACE &lt L_NAV TAB  &kp ENTER         &lt L_NAV ENTER &lt L_SYMNUM SPACE &mt RALT BACKSPACE      &none &none
 
             >; display-name = "Test"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>; };
 
@@ -207,7 +207,7 @@
             &trans &kp A &mt LALT R &mt LCTRL S &mt LSHIFT T &kp G  &kp LEFT_ARROW    &kp M &mt LSHIFT N &mt LCTRL E &mt LALT I &kp O &kp APOS
             &trans &kp Z &kp X &kp C &kp D &kp V  &kp RIGHT_ARROW   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &trans
                                                   &kp C_MUTE
-&none &none     &kp LGUI &trans &trans  &kp ENTER        &none &none     &trans &trans &trans
+&none &none     &kp LGUI &trans &trans  &kp ENTER         &trans &trans &trans      &none &none
 
             >; display-name = "Colemak"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>; };
 
@@ -223,7 +223,7 @@
             &kp MINUS &kp N1 &mt LALT N2 &mt LCTRL N3 &mt LSHIFT N4 &kp N5  &kp LEFT_ARROW    &kp N6 &mt LSHIFT N7 &mt LCTRL N8 &mt LALT N9 &kp N0 &kp PLUS
             &kp UNDERSCORE &kp LBRC &kp LBKT &kp RBKT &kp RBRC &kp DOT  &kp RIGHT_ARROW   &kp BSLH &kp EQUAL &trans &trans &trans &kp GRAVE
                                                   &kp C_MUTE
-&none &none     &trans &trans &kp DOT  &kp ENTER        &none &none     &kp ENTER &trans &trans
+&none &none     &trans &trans &kp DOT  &kp ENTER         &kp ENTER &trans &trans      &none &none
 
             >; display-name = "SymNum"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>; };
 
@@ -239,7 +239,7 @@
             &none &none &kp LALT &kp LCTRL &kp LSHIFT &none  &kp LEFT_ARROW    &kp LEFT &kp DOWN &kp UP &kp RIGHT &caps_word &none
             &none &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &kp K_REDO  &kp RIGHT_ARROW   &kp HOME &kp PG_DN &kp PG_UP &kp END &kp INS &none
                                                   &kp C_MUTE
-&none &none     &trans &trans &trans  &kp ENTER        &none &none     &kp ENTER &kp ENTER &kp BSPC
+&none &none     &trans &trans &trans  &kp ENTER         &kp ENTER &kp ENTER &kp BSPC      &none &none
 
             >; display-name = "Nav"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>; };
 
@@ -251,11 +251,11 @@
     bindings = <
 
        &none  &none &none &none &none &none       &kp UP_ARROW           &none &none &none &none &none &none
-            &none &none &none &none &none &none  &kp UP_ARROW      &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &none
-            &none &kp F1 &kp F2 &kp F3 &kp F4 &kp F5  &kp LEFT_ARROW    &none &none &none &none &none &none
+            &none &kp F1 &kp F2 &kp F3 &kp F4 &kp F5  &kp UP_ARROW      &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &none
+            &none &kp F11 &kp F12 &none &kp SLCK &kp PSCRN  &kp LEFT_ARROW    &none &none &none &none &none &none
             &out OUT_BLE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &kp PAUSE_BREAK  &kp RIGHT_ARROW   &none &none &none &none &none &out OUT_USB
                                                   &kp C_MUTE
-&none &none     &td_bt1 &trans &trans  &kp ENTER        &none &none     &kp ENTER &trans &trans
+&none &none     &td_bt1 &trans &trans  &kp ENTER         &trans &trans &trans      &none &none
 
             >; display-name = "Special"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>; };
 
@@ -271,7 +271,7 @@
             &none &kp C_BRI_DN &kp C_BRI_UP &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE  &kp LEFT_ARROW    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none &none
             &none &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &kp K_REDO  &kp RIGHT_ARROW   &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none &none
                                                   &kp C_MUTE
-&none &none     &trans &trans &trans  &kp ENTER        &none &none     &kp ENTER &mkp RCLK &mkp LCLK
+&none &none     &trans &trans &trans  &kp ENTER         &kp ENTER &mkp RCLK &mkp LCLK      &none &none
 
             >; display-name = "Mouse"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>; };
 
@@ -287,7 +287,7 @@
             &caps_word &kp A &to L_SPECIAL &mt LCTRL D &mt LSHIFT F &kp G  &kp LEFT_ARROW    &kp X &mt LSHIFT J &mt LCTRL K &mt LALT L &kp SEMI &kp APOS
             &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B  &kp RIGHT_ARROW   &kp N &to L_MOUSE &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
                                                   &kp C_MUTE
-&none &none     &kp LGUI &trans &lt L_MOUSE ESC  &kp ENTER        &none &none     &lt L_NAV ENTER &lt L_SYMNUM SPACE &lt L_SPECIAL BACKSPACE
+&none &none     &kp LGUI &trans &lt L_MOUSE ESC  &kp ENTER         &lt L_NAV ENTER &lt L_SYMNUM SPACE &lt L_SPECIAL BACKSPACE      &none &none
 
             >; display-name = "Jump"; sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>; };
 
