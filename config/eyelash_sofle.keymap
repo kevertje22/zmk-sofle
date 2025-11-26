@@ -157,7 +157,7 @@
 
     // but just &kp LC(C) is simpler than macro_copy..
     macros {
-        macro0: macro0 {
+        macro1: macro1 {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = 
@@ -173,6 +173,39 @@
             <&kp R>,
             <&kp E>,
             <&kp EXCL>,
+            <&kp SPACE>;
+        };
+        macro2: macro2 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = 
+            <&kp X>,
+            <&kp SPACE>;
+        };
+        macro3: macro3 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = 
+            <&kp X>,
+            <&kp SPACE>;
+        };
+        macro4: macro4 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = 
+            <&kp V>,
+            <&kp N1>,
+            <&kp N2>,
+            <&kp SPACE>,
+            <&kp A>,
+            <&kp L>,
+            <&kp L>,
+            <&kp E>,
+            <&kp G>,
+            <&kp E>,
+            <&kp D>,
+            <&kp L>,
+            <&kp Y>,
             <&kp SPACE>;
         };
     //    macro_copy: macro_copy {
@@ -309,7 +342,7 @@
        &none  &none &none &none &none &none       &kp UP_ARROW           &none &none &none &none &none &none
             &kp ESC &kp Q &kp W &kp E &kp R &kp T  &kp UP_ARROW      &to L_COLEMAK &to L_TEST &to L_MOUSE &to L_FUNC &to L_JUMP &kp DEL
             &caps_word &kp A &to L_FUNC &mt LCTRL D &mt LSHIFT F &kp G  &kp LEFT_ARROW    &kp X &mt LSHIFT J &mt LCTRL K &mt LALT L &kp SEMI &kp APOS
-            &kp LSHIFT &kp Z &kp X &kp C &macro0 &kp B  &kp RIGHT_ARROW   &kp N &to L_MOUSE &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
+            &kp LSHIFT &macro1 &macro2 &macro3 &macro4 &kp B  &kp RIGHT_ARROW   &kp N &to L_MOUSE &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
                                                   &kp C_MUTE
 &none &none     &kp LGUI &trans &lt L_MOUSE ESC  &kp ENTER         &lt L_NAV ENTER &lt L_SYMNUM SPACE &lt L_FUNC BACKSPACE      &none &none
 
